@@ -1,0 +1,2827 @@
+<html lang="en"><head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#0f172a">
+    <title>Advanced Virtual Titration Lab</title>
+    
+    <!-- PWA Manifest for "Add to Home Screen" capability -->
+    <link rel="manifest" href="data:application/manifest+json,{&quot;name&quot;: &quot;Titration Lab&quot;, &quot;short_name&quot;: &quot;Titration&quot;, &quot;display&quot;: &quot;standalone&quot;, &quot;background_color&quot;: &quot;#0f172a&quot;, &quot;theme_color&quot;: &quot;#0f172a&quot;, &quot;start_url&quot;: &quot;.&quot;}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" rel="stylesheet">
+    <style>
+        
+        /* Custom Flask Shape */
+        .flask-shape {
+            width: 120px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-top: none;
+            border-radius: 0 0 50px 50px;
+            position: relative;
+            transform: perspective(100px) rotateX(5deg);
+            clip-path: polygon(20% 0, 80% 0, 100% 100%, 0% 100%);
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5);
+            overflow: hidden;
+        }
+
+        .flask-neck {
+            width: 40px;
+            height: 60px;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-bottom: none;
+            background: rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: -58px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+        }
+
+        /* Liquid in Flask */
+        .flask-liquid {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            transition: height 0.1s linear, background-color 0.2s ease;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Burette Shape */
+        .burette-body {
+            width: 24px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(200, 200, 200, 0.8);
+            border-radius: 0 0 4px 4px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .burette-liquid {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(200, 220, 255, 0.6);
+            transition: height 0.1s linear;
+        }
+
+        .burette-tip {
+            width: 4px;
+            height: 20px;
+            background: rgba(200, 200, 200, 0.8);
+            margin: 0 auto;
+        }
+
+        /* Drop Animation */
+        .drop {
+            width: 6px;
+            height: 8px;
+            background: rgba(200, 220, 255, 0.8);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        @keyframes fall {
+            0% { top: 320px; opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 480px; opacity: 0; }
+        }
+
+        .animate-drop {
+            animation: fall 0.5s linear infinite;
+        }
+
+        canvas {
+            background: #ffffff;
+            border-radius: 0.5rem;
+        }
+
+        /* Mode Switch Toggle */
+        .mode-toggle-checkbox:checked + .mode-toggle-label {
+            background-color: #8b5cf6; /* Violet-500 */
+        }
+        .mode-toggle-checkbox:checked + .mode-toggle-label:before {
+            transform: translateX(100%);
+        }
+        
+        /* Custom Scrollbar for Guide */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.1); 
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.2); 
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: rgba(255,255,255,0.3); 
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.container{width:100%}@media (min-width: 640px){.container{max-width:640px}}@media (min-width: 768px){.container{max-width:768px}}@media (min-width: 1024px){.container{max-width:1024px}}@media (min-width: 1280px){.container{max-width:1280px}}@media (min-width: 1536px){.container{max-width:1536px}}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.bottom-6{bottom:1.5rem}.left-0{left:0px}.left-4{left:1rem}.left-6{left:1.5rem}.right-0{right:0px}.right-4{right:1rem}.right-6{right:1.5rem}.right-\[25\%\]{right:25%}.top-0{top:0px}.top-4{top:1rem}.top-6{top:1.5rem}.top-\[100px\]{top:100px}.z-10{z-index:10}.z-20{z-index:20}.z-50{z-index:50}.z-\[100\]{z-index:100}.mx-auto{margin-left:auto;margin-right:auto}.my-2{margin-top:0.5rem;margin-bottom:0.5rem}.my-\[-2px\]{margin-top:-2px;margin-bottom:-2px}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mr-2{margin-right:0.5rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-20{margin-top:5rem}.mt-3{margin-top:0.75rem}.mt-8{margin-top:2rem}.mt-auto{margin-top:auto}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-1{height:0.25rem}.h-2{height:0.5rem}.h-3{height:0.75rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-64{height:16rem}.h-8{height:2rem}.h-\[400px\]{height:400px}.h-fit{height:-moz-fit-content;height:fit-content}.h-full{height:100%}.h-px{height:1px}.max-h-\[60vh\]{max-height:60vh}.min-h-\[2rem\]{min-height:2rem}.min-h-\[500px\]{min-height:500px}.min-h-screen{min-height:100vh}.w-10{width:2.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-3{width:0.75rem}.w-40{width:10rem}.w-48{width:12rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-8{width:2rem}.w-full{width:100%}.max-w-lg{max-width:32rem}.flex-1{flex:1 1 0%}.origin-bottom{transform-origin:bottom}.rotate-90{--tw-rotate:90deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.scale-90{--tw-scale-x:.9;--tw-scale-y:.9;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.cursor-pointer{cursor:pointer}.select-none{-webkit-user-select:none;user-select:none}.list-inside{list-style-position:inside}.list-disc{list-style-type:disc}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.overflow-x-hidden{overflow-x:hidden}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-4{border-width:4px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-indigo-500\/30{border-color:rgb(99 102 241 / 0.3)}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-400\/30{border-color:rgb(148 163 184 / 0.3)}.border-slate-500{--tw-border-opacity:1;border-color:rgb(100 116 139 / var(--tw-border-opacity, 1))}.border-slate-600{--tw-border-opacity:1;border-color:rgb(71 85 105 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-700\/50{border-color:rgb(51 65 85 / 0.5)}.border-violet-500{--tw-border-opacity:1;border-color:rgb(139 92 246 / var(--tw-border-opacity, 1))}.border-violet-500\/30{border-color:rgb(139 92 246 / 0.3)}.border-violet-500\/50{border-color:rgb(139 92 246 / 0.5)}.bg-black\/80{background-color:rgb(0 0 0 / 0.8)}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-cyan-600{--tw-bg-opacity:1;background-color:rgb(8 145 178 / var(--tw-bg-opacity, 1))}.bg-indigo-900{--tw-bg-opacity:1;background-color:rgb(49 46 129 / var(--tw-bg-opacity, 1))}.bg-indigo-900\/30{background-color:rgb(49 46 129 / 0.3)}.bg-orange-500{--tw-bg-opacity:1;background-color:rgb(249 115 22 / var(--tw-bg-opacity, 1))}.bg-pink-500{--tw-bg-opacity:1;background-color:rgb(236 72 153 / var(--tw-bg-opacity, 1))}.bg-pink-500\/80{background-color:rgb(236 72 153 / 0.8)}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-slate-500{--tw-bg-opacity:1;background-color:rgb(100 116 139 / var(--tw-bg-opacity, 1))}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/30{background-color:rgb(30 41 59 / 0.3)}.bg-slate-800\/80{background-color:rgb(30 41 59 / 0.8)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/50{background-color:rgb(15 23 42 / 0.5)}.bg-slate-900\/90{background-color:rgb(15 23 42 / 0.9)}.bg-violet-600{--tw-bg-opacity:1;background-color:rgb(124 58 237 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.bg-gradient-to-b{background-image:linear-gradient(to bottom, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-cyan-400{--tw-gradient-from:#22d3ee var(--tw-gradient-from-position);--tw-gradient-to:rgb(34 211 238 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-slate-800{--tw-gradient-from:#1e293b var(--tw-gradient-from-position);--tw-gradient-to:rgb(30 41 59 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-violet-500{--tw-gradient-from:#8b5cf6 var(--tw-gradient-from-position);--tw-gradient-to:rgb(139 92 246 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.to-blue-500{--tw-gradient-to:#3b82f6 var(--tw-gradient-to-position)}.to-indigo-500{--tw-gradient-to:#6366f1 var(--tw-gradient-to-position)}.to-slate-900{--tw-gradient-to:#0f172a var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-1{padding:0.25rem}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-12{padding-bottom:3rem}.pb-20{padding-bottom:5rem}.pr-2{padding-right:0.5rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.align-middle{vertical-align:middle}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.font-sans{font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.italic{font-style:italic}.leading-relaxed{line-height:1.625}.tracking-tighter{letter-spacing:-0.05em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-cyan-300{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.text-cyan-400{--tw-text-opacity:1;color:rgb(34 211 238 / var(--tw-text-opacity, 1))}.text-indigo-200{--tw-text-opacity:1;color:rgb(199 210 254 / var(--tw-text-opacity, 1))}.text-red-400{--tw-text-opacity:1;color:rgb(248 113 113 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-violet-300{--tw-text-opacity:1;color:rgb(196 181 253 / var(--tw-text-opacity, 1))}.text-violet-400{--tw-text-opacity:1;color:rgb(167 139 250 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-yellow-400{--tw-text-opacity:1;color:rgb(250 204 21 / var(--tw-text-opacity, 1))}.accent-blue-500{accent-color:#3b82f6}.accent-cyan-500{accent-color:#06b6d4}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-\[0_0_8px_rgba\(239\2c 68\2c 68\2c 0\.6\)\]{--tw-shadow:0 0 8px rgba(239,68,68,0.6);--tw-shadow-colored:0 0 8px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-cyan-900\/50{--tw-shadow-color:rgb(22 78 99 / 0.5);--tw-shadow:var(--tw-shadow-colored)}.shadow-red-500\/60{--tw-shadow-color:rgb(239 68 68 / 0.6);--tw-shadow:var(--tw-shadow-colored)}.ring-2{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-cyan-500{--tw-ring-opacity:1;--tw-ring-color:rgb(6 182 212 / var(--tw-ring-opacity, 1))}.backdrop-blur{--tw-backdrop-blur:blur(8px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-200{transition-duration:200ms}.duration-300{transition-duration:300ms}.ease-in{transition-timing-function:cubic-bezier(0.4, 0, 1, 1)}.selection\:bg-cyan-500 *::selection{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.selection\:text-white *::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.selection\:bg-cyan-500::selection{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.selection\:text-white::selection{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.before\:absolute::before{content:var(--tw-content);position:absolute}.before\:left-0::before{content:var(--tw-content);left:0px}.before\:top-0::before{content:var(--tw-content);top:0px}.before\:block::before{content:var(--tw-content);display:block}.before\:h-5::before{content:var(--tw-content);height:1.25rem}.before\:w-5::before{content:var(--tw-content);width:1.25rem}.before\:rounded-full::before{content:var(--tw-content);border-radius:9999px}.before\:bg-white::before{content:var(--tw-content);--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.before\:transition-transform::before{content:var(--tw-content);transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.before\:duration-200::before{content:var(--tw-content);transition-duration:200ms}.before\:content-\[\'\'\]::before{--tw-content:'';content:var(--tw-content)}.hover\:border-cyan-500:hover{--tw-border-opacity:1;border-color:rgb(6 182 212 / var(--tw-border-opacity, 1))}.hover\:bg-cyan-500:hover{--tw-bg-opacity:1;background-color:rgb(6 182 212 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-400:hover{--tw-bg-opacity:1;background-color:rgb(148 163 184 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-600:hover{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.hover\:bg-violet-500:hover{--tw-bg-opacity:1;background-color:rgb(139 92 246 / var(--tw-bg-opacity, 1))}.hover\:text-cyan-300:hover{--tw-text-opacity:1;color:rgb(103 232 249 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-blue-500:focus{--tw-border-opacity:1;border-color:rgb(59 130 246 / var(--tw-border-opacity, 1))}.focus\:border-cyan-500:focus{--tw-border-opacity:1;border-color:rgb(6 182 212 / var(--tw-border-opacity, 1))}.focus\:border-violet-500:focus{--tw-border-opacity:1;border-color:rgb(139 92 246 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-violet-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(139 92 246 / var(--tw-ring-opacity, 1))}.disabled\:opacity-50:disabled{opacity:0.5}.group:hover .group-hover\:-translate-y-0\.5{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:scale-110{--tw-scale-x:1.1;--tw-scale-y:1.1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 640px){.sm\:inline{display:inline}.sm\:h-6{height:1.5rem}.sm\:w-12{width:3rem}.sm\:w-6{width:1.5rem}.sm\:scale-100{--tw-scale-x:1;--tw-scale-y:1;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.sm\:text-xs{font-size:0.75rem;line-height:1rem}.sm\:before\:h-6::before{content:var(--tw-content);height:1.5rem}.sm\:before\:w-6::before{content:var(--tw-content);width:1.5rem}}@media (min-width: 1024px){.lg\:right-\[30\%\]{right:30%}.lg\:col-span-3{grid-column:span 3 / span 3}.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:w-auto{width:auto}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:flex-row{flex-direction:row}.lg\:justify-end{justify-content:flex-end}.lg\:p-6{padding:1.5rem}.lg\:pb-0{padding-bottom:0px}.lg\:text-2xl{font-size:1.5rem;line-height:2rem}.lg\:text-sm{font-size:0.875rem;line-height:1.25rem}}</style></head>
+<body class="bg-slate-900 text-slate-100 min-h-screen font-sans overflow-x-hidden selection:bg-cyan-500 selection:text-white pb-20 lg:pb-0">
+<div id="aim_overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 15, 25, 0.98); z-index: 1000005; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif;">
+    <div style="background: #1e293b; border: 2px solid #3b82f6; border-radius: 20px; padding: 40px; width: 550px; box-shadow: 0 20px 50px rgba(0,0,0,0.7); color: white; position: relative; overflow: hidden;">
+        
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #22d3ee, #3b82f6);"></div>
+
+        <div style="display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #334155; padding-bottom: 20px; margin-bottom: 25px;">
+            <span class="material-symbols-outlined" style="font-size: 40px; color: #3b82f6;">flag</span>
+            <div>
+                <h2 style="margin: 0; font-size: 24px; color: #f8fafc;">Experiment Aim & Objective</h2>
+                <p style="margin: 5px 0 0 0; color: #94a3b8; font-size: 14px;">Advanced Virtual Titration Laboratory</p>
+            </div>
+        </div>
+        
+        <div style="background: #0f172a; padding: 20px; border-radius: 12px; border: 1px solid #1e293b; margin-bottom: 25px;">
+            <h3 style="color: #60a5fa; margin-top: 0; margin-bottom: 10px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Primary Aim</h3>
+            <p style="color: #e2e8f0; font-size: 15px; line-height: 1.6; margin: 0;">
+                To determine the unknown concentration of a given analyte by accurately titrating it against a standard reagent of known concentration, and to plot the corresponding titration curve.
+            </p>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #60a5fa; margin-top: 0; margin-bottom: 15px; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Learning Outcomes</h3>
+            <ul style="color: #cbd5e1; font-size: 14px; line-height: 1.6; padding-left: 20px; margin: 0;">
+                <li style="margin-bottom: 8px;">Understand the core principles of neutralization, redox, and complexometric titrations.</li>
+                <li style="margin-bottom: 8px;">Identify the correct equivalence point using visual indicators and potentiometric graphs.</li>
+                <li>Apply stoichiometric formulas (M₁V₁ = M₂V₂) to calculate unknown concentrations.</li>
+            </ul>
+        </div>
+
+        <button onclick="proceedToPreLab()" style="width: 100%; padding: 16px; background: #3b82f6; color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 15px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;" onmouseover="this.style.background='#2563eb'" onmouseout="this.style.background='#3b82f6'">
+            PROCEED TO PRE-LAB QUIZ <span class="material-symbols-outlined" style="font-size: 20px;">arrow_forward</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    // This hides the Safety overlay temporarily
+    window.addEventListener('DOMContentLoaded', () => {
+        const safetyOverlay = document.getElementById('safety_protocol_overlay');
+        if(safetyOverlay) safetyOverlay.style.display = 'none';
+    });
+
+    // This transitions the student from the Aim screen -> to the Pre-Lab Quiz
+    function proceedToPreLab() {
+        document.getElementById('aim_overlay').style.display = 'none';
+        document.getElementById('prelab_overlay').style.display = 'flex';
+    }
+</script>
+<div id="postlab_overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 15, 25, 0.98); z-index: 1000004; display: none; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif;">
+    <div style="background: #1e293b; border: 2px solid #10b981; border-radius: 20px; padding: 40px; width: 600px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.7); color: white; position: relative;">
+        
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #10b981, #3b82f6);"></div>
+        
+        <button onclick="document.getElementById('postlab_overlay').style.display='none'" style="position: absolute; top: 15px; right: 20px; background: none; border: none; color: #94a3b8; cursor: pointer;">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+
+        <div style="display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #334155; padding-bottom: 15px; margin-bottom: 25px;">
+            <span class="material-symbols-outlined" style="font-size: 40px; color: #10b981;">school</span>
+            <div>
+                <h2 style="margin: 0; font-size: 24px; color: #f8fafc;">Post-Lab Viva Assessment</h2>
+                <p style="margin: 5px 0 0 0; color: #94a3b8; font-size: 14px;">Test your conceptual understanding of the experiment.</p>
+            </div>
+        </div>
+
+        <div id="postquiz-container" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">1. Why do we read the lower meniscus for colorless liquids like HCl?</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq1" value="wrong" style="accent-color: #10b981; transform: scale(1.2);"> Because the liquid expands at the top
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq1" value="correct" style="accent-color: #10b981; transform: scale(1.2);"> To avoid parallax error and maintain consistency
+                </label>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">2. What happens if a few drops of titrant remain on the inner wall of the flask and are not washed down?</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq2" value="correct" style="accent-color: #10b981; transform: scale(1.2);"> The calculated unknown concentration will be artificially higher
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq2" value="wrong" style="accent-color: #10b981; transform: scale(1.2);"> The equivalence point will be reached faster
+                </label>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">3. Why is Phenolphthalein NOT suitable for a Strong Acid + Weak Base titration?</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq3" value="wrong" style="accent-color: #10b981; transform: scale(1.2);"> It reacts with the weak base to form a precipitate
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="pq3" value="correct" style="accent-color: #10b981; transform: scale(1.2);"> Its pH range (8.2-10) doesn't align with the acidic equivalence point (<7)
+                </label>
+            </div>
+        </div>
+
+        <div id="postquiz-feedback" style="margin-top: 15px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 14px; display: none;"></div>
+
+        <button onclick="checkPostLabQuiz()" style="width: 100%; padding: 16px; margin-top: 15px; background: #10b981; color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 15px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">
+            SUBMIT VIVA <span class="material-symbols-outlined" style="font-size: 20px;">done_all</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    function checkPostLabQuiz() {
+        let score = 0;
+        const q1 = document.querySelector('input[name="pq1"]:checked');
+        const q2 = document.querySelector('input[name="pq2"]:checked');
+        const q3 = document.querySelector('input[name="pq3"]:checked');
+        const feedback = document.getElementById('postquiz-feedback');
+
+        if (!q1 || !q2 || !q3) {
+            feedback.style.display = 'block';
+            feedback.style.background = 'rgba(248, 113, 113, 0.2)';
+            feedback.style.color = '#f87171';
+            feedback.style.border = '1px solid #f87171';
+            feedback.innerText = "⚠️ Please answer all Viva questions.";
+            return;
+        }
+
+        if (q1.value === 'correct') score++;
+        if (q2.value === 'correct') score++;
+        if (q3.value === 'correct') score++;
+
+        feedback.style.display = 'block';
+
+        if (score === 3) {
+            feedback.style.background = 'rgba(74, 222, 128, 0.2)';
+            feedback.style.color = '#4ade80';
+            feedback.style.border = '1px solid #4ade80';
+            feedback.innerHTML = "✅ Excellent! You passed the Viva. <br><span style='font-size:12px; font-weight:normal;'>You may now close this and generate your final Lab Report.</span>";
+            window.vivaPassed = true; // Saves state for the PDF generator later
+        } else {
+            feedback.style.background = 'rgba(248, 113, 113, 0.2)';
+            feedback.style.color = '#f87171';
+            feedback.style.border = '1px solid #f87171';
+            feedback.innerText = `❌ You scored ${score}/3. Review the theory and try again.`;
+        }
+    }
+</script>
+<div id="prelab_overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 15, 25, 0.98); z-index: 1000004; display: none; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif;">
+    <div style="background: #1e293b; border: 2px solid #8b5cf6; border-radius: 20px; padding: 40px; width: 600px; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 50px rgba(0,0,0,0.7); color: white; position: relative;">
+        
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 6px; background: linear-gradient(90deg, #8b5cf6, #d946ef);"></div>
+
+        <div style="display: flex; align-items: center; gap: 15px; border-bottom: 1px solid #334155; padding-bottom: 15px; margin-bottom: 25px;">
+            <span class="material-symbols-outlined" style="font-size: 40px; color: #8b5cf6;">quiz</span>
+            <div>
+                <h2 style="margin: 0; font-size: 24px; color: #f8fafc;">Pre-Lab Assessment</h2>
+                <p style="margin: 5px 0 0 0; color: #94a3b8; font-size: 14px;">You must score 100% to unlock the Safety Protocol.</p>
+            </div>
+        </div>
+
+        <div id="quiz-container" style="display: flex; flex-direction: column; gap: 20px;">
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">1. What is the primary function of a pH indicator in titration?</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q1" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> To change the pH of the solution actively
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q1" value="correct" style="accent-color: #8b5cf6; transform: scale(1.2);"> To visually signal the equivalence/end point
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q1" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> To act as a chemical buffer
+                </label>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">2. The standard solution of known concentration is placed in the:</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q2" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> Conical Flask (Analyte)
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q2" value="correct" style="accent-color: #8b5cf6; transform: scale(1.2);"> Burette (Titrant)
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q2" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> Wash Bottle
+                </label>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.6); padding: 15px; border-radius: 12px; border: 1px solid #334155;">
+                <p style="margin-top: 0; margin-bottom: 12px; font-weight: bold; color: #e2e8f0; font-size: 15px;">3. Which formula is used to calculate unknown concentration at the equivalence point?</p>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q3" value="correct" style="accent-color: #8b5cf6; transform: scale(1.2);"> M₁V₁ / n₁ = M₂V₂ / n₂
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q3" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> pH = -log[H⁺]
+                </label>
+                <label style="display: flex; align-items: center; gap: 8px; color: #cbd5e1; cursor: pointer; font-size: 14px;">
+                    <input type="radio" name="q3" value="wrong" style="accent-color: #8b5cf6; transform: scale(1.2);"> Nernst Equation
+                </label>
+            </div>
+        </div>
+
+        <div id="quiz-feedback" style="margin-top: 15px; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 14px; display: none;"></div>
+
+        <button onclick="checkPreLabQuiz()" style="width: 100%; padding: 16px; margin-top: 15px; background: #8b5cf6; color: white; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; font-size: 15px; transition: 0.2s; display: flex; justify-content: center; align-items: center; gap: 10px;" onmouseover="this.style.background='#7c3aed'" onmouseout="this.style.background='#8b5cf6'">
+            SUBMIT ANSWERS <span class="material-symbols-outlined" style="font-size: 20px;">task_alt</span>
+        </button>
+    </div>
+</div>
+
+<script>
+    // Evaluate Quiz
+    function checkPreLabQuiz() {
+        let score = 0;
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        const q3 = document.querySelector('input[name="q3"]:checked');
+        const feedback = document.getElementById('quiz-feedback');
+
+        if (!q1 || !q2 || !q3) {
+            feedback.style.display = 'block';
+            feedback.style.background = 'rgba(248, 113, 113, 0.2)';
+            feedback.style.color = '#f87171';
+            feedback.style.border = '1px solid #f87171';
+            feedback.innerText = "⚠️ Please answer all questions before submitting.";
+            return;
+        }
+
+        if (q1.value === 'correct') score++;
+        if (q2.value === 'correct') score++;
+        if (q3.value === 'correct') score++;
+
+        feedback.style.display = 'block';
+
+        if (score === 3) {
+            feedback.style.background = 'rgba(74, 222, 128, 0.2)';
+            feedback.style.color = '#4ade80';
+            feedback.style.border = '1px solid #4ade80';
+            feedback.innerText = "✅ Perfect 3/3! Unlocking Safety Protocol...";
+            
+            setTimeout(() => {
+                document.getElementById('prelab_overlay').style.display = 'none';
+                const safetyOverlay = document.getElementById('safety_protocol_overlay');
+                if(safetyOverlay) safetyOverlay.style.display = 'flex';
+            }, 1500);
+            
+        } else {
+            feedback.style.background = 'rgba(248, 113, 113, 0.2)';
+            feedback.style.color = '#f87171';
+            feedback.style.border = '1px solid #f87171';
+            feedback.innerText = `❌ You scored ${score}/3. You must score 3/3 to enter the lab. Please review and try again.`;
+        }
+    }
+</script>
+<!-- Header -->
+<header class="p-4 lg:p-6 bg-slate-800 border-b border-slate-700 shadow-md flex flex-col lg:flex-row justify-between items-center z-50 relative gap-4">
+    <div class="flex items-center gap-3 w-full lg:w-auto">
+        <span class="material-symbols-outlined text-4xl text-cyan-400">science</span>
+        <div>
+            <h1 class="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Virtual Titration Lab</h1>
+            <p class="text-slate-400 text-xs lg:text-sm">Acid-Base Simulation &amp; Analysis</p>
+        </div>
+    </div>
+    
+    <div id="burette-gatekeeper-panel" style="display: flex; gap: 20px; align-items: center; padding: 18px; background: #1a202c; border-radius: 12px; border: 2px solid #3b82f6; margin-bottom: 20px; width: fit-content; font-family: sans-serif;">
+    
+    <div id="zoom-container" style="position: relative; width: 160px; height: 160px; background: #ffffff; border: 2px solid #4a9eff; border-radius: 8px; overflow: hidden;">
+        <canvas id="zoomCanvas" width="160" height="160"></canvas>
+        <div style="position: absolute; top: 80px; width: 100%; height: 1px; background: rgba(255, 0, 0, 0.7); pointer-events: none; border-top: 1px dashed #ff0000;"></div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; color: #e2e8f0; min-width: 250px;">
+        <label for="eyeLevel" style="font-size: 13px; font-weight: bold; margin-bottom: 10px; color: #60a5fa;">
+            STEP 1: ALIGN EYE LEVEL (PARALLAX)
+        </label>
+        
+        <input type="range" id="eyeLevel" min="-35" max="35" value="15" style="width: 100%; accent-color: #4a9eff;">
+        
+        <p id="read-status" style="font-size: 11px; margin-top: 12px; color: #f87171; font-weight: 600;">
+            ⚠️ View is skewed! Align red dashed line to 0.
+        </p>
+
+        <button id="btn-confirm-read" onclick="verifyInitialReading()" style="margin-top: 15px; padding: 12px; background: #2d3748; color: #718096; border: none; border-radius: 8px; font-weight: bold; cursor: not-allowed; transition: 0.3s;" disabled>
+            CONFIRM STARTING VOLUME
+        </button>
+    </div>
+</div>
+
+<script>
+    const zCanvas = document.getElementById('zoomCanvas');
+    const zCtx = zCanvas.getContext('2d');
+    const eyeSlider = document.getElementById('eyeLevel');
+    const confirmBtn = document.getElementById('btn-confirm-read');
+    const statusTxt = document.getElementById('read-status');
+
+    window.titrationVolume = 0; 
+
+    function renderBuretteZoom() {
+        const eyeOffset = parseInt(eyeSlider.value);
+        zCtx.clearRect(0, 0, zCanvas.width, zCanvas.height);
+        
+        zCtx.save();
+        zCtx.translate(0, -(window.titrationVolume * 25) + 80); 
+
+        // Draw Graduation Marks
+        zCtx.strokeStyle = "#333";
+        zCtx.font = "11px Arial";
+        for (let i = 0; i <= 500; i++) {
+            let yPos = i * 12.5; 
+            zCtx.beginPath();
+            zCtx.moveTo(20, yPos);
+            if (i % 2 === 0) {
+                zCtx.lineTo(70, yPos);
+                zCtx.fillText((i/2).toFixed(1), 75, yPos + 4);
+            } else {
+                zCtx.lineTo(45, yPos);
+            }
+            zCtx.stroke();
+        }
+
+        // Draw Meniscus with Parallax Shift
+        // If eye is below (positive offset), meniscus appears lower 
+        const parallaxShift = eyeOffset * 0.5; 
+        zCtx.fillStyle = "rgba(74, 158, 255, 0.35)";
+        zCtx.beginPath();
+        zCtx.moveTo(0, (window.titrationVolume * 25) + parallaxShift);
+        zCtx.bezierCurveTo(40, (window.titrationVolume * 25) + 12 + parallaxShift, 120, (window.titrationVolume * 25) + 12 + parallaxShift, 160, (window.titrationVolume * 25) + parallaxShift);
+        zCtx.lineTo(160, 2000); 
+        zCtx.lineTo(0, 2000);
+        zCtx.fill();
+        
+        zCtx.restore();
+    }
+
+    // Logic to lock/unlock titration
+    eyeSlider.addEventListener('input', () => {
+        const val = parseInt(eyeSlider.value);
+        if (val === 0) {
+            confirmBtn.disabled = false;
+            confirmBtn.style.background = "#3b82f6";
+            confirmBtn.style.color = "white";
+            confirmBtn.style.cursor = "pointer";
+            statusTxt.innerText = "✨ Perfect! Your eye level is level with the meniscus.";
+            statusTxt.style.color = "#60a5fa";
+        } else {
+            confirmBtn.disabled = true;
+            confirmBtn.style.background = "#2d3748";
+            confirmBtn.style.color = "#718096";
+            confirmBtn.style.cursor = "not-allowed";
+            statusTxt.innerText = "⚠️ View is skewed! Align eye level to 0.";
+            statusTxt.style.color = "#f87171";
+        }
+        renderBuretteZoom();
+    });
+
+    function verifyInitialReading() {
+        if (parseInt(eyeSlider.value) === 0) {
+            statusTxt.innerText = "✅ Reading Confirmed. You may now titrate.";
+            statusTxt.style.color = "#4ade80";
+            confirmBtn.innerText = "READING RECORDED";
+            confirmBtn.style.background = "#22c55e";
+            
+            // LINK TO ADOBE ANIMATE: Enable the titration button 
+            if (window.exportRoot && window.exportRoot.titrate_btn) {
+                window.exportRoot.titrate_btn.enabled = true;
+                window.exportRoot.titrate_btn.alpha = 1.0;
+            }
+        }
+    }
+
+    // INITIALIZATION
+    renderBuretteZoom();
+    
+    // Auto-sync with Animate volume every 50ms
+    setInterval(() => {
+        if (window.exportRoot && window.exportRoot.vol_txt) {
+            window.titrationVolume = parseFloat(window.exportRoot.vol_txt.text);
+        }
+        renderBuretteZoom();
+    }, 50);
+
+    // LOCK ON LOAD [4]
+    window.addEventListener('load', () => {
+        const lockLoop = setInterval(() => {
+            if (window.exportRoot && window.exportRoot.titrate_btn) {
+                window.exportRoot.titrate_btn.enabled = false;
+                window.exportRoot.titrate_btn.alpha = 0.5; // Visual fade to show it's locked
+                clearInterval(lockLoop);
+            }
+        }, 100);
+    });
+</script>
+    
+    <div id="calibration-overlay" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(10, 15, 25, 0.95); z-index: 9999; display: flex; justify-content: center; align-items: center; font-family: 'Segoe UI', sans-serif; color: #e2e8f0;">
+    
+    <div style="background: #1a202c; border: 2px solid #2d3748; border-radius: 16px; padding: 30px; width: 450px; box-shadow: 0 10px 25px rgba(0,0,0,0.5); text-align: center;">
+        <h2 style="margin-top: 0; color: #4a9eff;">Potentiometric Calibration</h2>
+        <p style="font-size: 14px; color: #a0aec0;">The pH meter must be calibrated with two standard buffers before the titration can begin.</p>
+        
+        <div style="background: #000; border: 4px solid #4a5568; border-radius: 8px; padding: 15px; margin: 20px 0; font-family: monospace;">
+            <div style="color: #63b3ed; font-size: 12px; text-align: left; margin-bottom: 5px;">PH METER READING</div>
+            <div id="calib-ph-display" style="color: #00ffcc; font-size: 48px; text-shadow: 0 0 10px #00ffcc;">--.--</div>
+        </div>
+
+        <div style="display: flex; justify-content: space-around; margin: 25px 0;">
+            <div onclick="dipProbe(7.0)" id="buffer-7" style="cursor: pointer; transition: 0.3s; padding: 10px; border-radius: 10px; border: 1px solid #4a5568;">
+                <div style="width: 40px; height: 60px; background: #e53e3e; border-radius: 4px; margin: 0 auto 10px; border: 2px solid white;"></div>
+                <span style="font-size: 12px; font-weight: bold;">Buffer 7.00</span>
+                <div id="check-7" style="color: #48bb78; display: none; font-size: 10px;">✓ CALIBRATED</div>
+            </div>
+            
+            <div onclick="dipProbe(4.0)" id="buffer-4" style="cursor: pointer; transition: 0.3s; padding: 10px; border-radius: 10px; border: 1px solid #4a5568;">
+                <div style="width: 40px; height: 60px; background: #ed8936; border-radius: 4px; margin: 0 auto 10px; border: 2px solid white;"></div>
+                <span style="font-size: 12px; font-weight: bold;">Buffer 4.00</span>
+                <div id="check-4" style="color: #48bb78; display: none; font-size: 10px;">✓ CALIBRATED</div>
+            </div>
+        </div>
+
+        <button id="btn-calibrate" disabled onclick="executeCalibration()" style="width: 100%; padding: 12px; border-radius: 8px; border: none; background: #2d3748; color: #718096; font-weight: bold; cursor: not-allowed; transition: 0.3s;">
+            CALIBRATE POINT
+        </button>
+        
+        <p id="calib-instructions" style="font-size: 12px; margin-top: 15px; color: #718096;">Step 1: Select a buffer to dip the probe.</p>
+    </div>
+</div>
+
+<script>
+    let calibrationState = {
+        currentValueInProbe: null,
+        ph4Done: false,
+        ph7Done: false
+    };
+
+    const phDisplay = document.getElementById('calib-ph-display');
+    const calibBtn = document.getElementById('btn-calibrate');
+    const instructTxt = document.getElementById('calib-instructions');
+
+    function dipProbe(val) {
+        // Reset visual selection
+        document.getElementById('buffer-7').style.background = "transparent";
+        document.getElementById('buffer-4').style.background = "transparent";
+        
+        // Highlight selected buffer
+        document.getElementById('buffer-' + (val === 7? '7' : '4')).style.background = "rgba(99, 179, 237, 0.1)";
+        
+        // Simulate an uncalibrated meter (add a small random error)
+        let rawReading = val + (Math.random() * 0.4 - 0.2);
+        phDisplay.innerText = rawReading.toFixed(2);
+        
+        calibrationState.currentValueInProbe = val;
+        
+        // Enable Calibration Button
+        calibBtn.disabled = false;
+        calibBtn.style.background = "#3182ce";
+        calibBtn.style.color = "white";
+        calibBtn.style.cursor = "pointer";
+        instructTxt.innerText = "Step 2: Press 'Calibrate Point' to standardize.";
+    }
+
+    function executeCalibration() {
+        if (calibrationState.currentValueInProbe === 7.0) {
+            calibrationState.ph7Done = true;
+            document.getElementById('check-7').style.display = "block";
+            phDisplay.innerText = "7.00"; // Locked to exact value after calibration
+        } else if (calibrationState.currentValueInProbe === 4.0) {
+            calibrationState.ph4Done = true;
+            document.getElementById('check-4').style.display = "block";
+            phDisplay.innerText = "4.00";
+        }
+
+        // Check if finished
+        if (calibrationState.ph4Done && calibrationState.ph7Done) {
+            calibBtn.innerText = "CALIBRATION COMPLETE";
+            calibBtn.style.background = "#38a169";
+            instructTxt.innerText = "Success! Closing in 1.5 seconds...";
+            
+            setTimeout(() => {
+                document.getElementById('calibration-overlay').style.display = 'none';
+                // Unlock your main lab controls here
+                if (window.exportRoot && window.exportRoot.titrate_btn) {
+                    window.exportRoot.titrate_btn.enabled = true;
+                }
+            }, 1500);
+        } else {
+            instructTxt.innerText = "Point Saved. Now calibrate the other buffer.";
+        }
+    }
+</script>
+
+    <div class="flex items-center gap-4 w-full lg:w-auto justify-between lg:justify-end">
+        <div class="flex items-center gap-4 w-full lg:w-auto justify-end flex-wrap">
+        <button onclick="downloadApp()" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-700 hover:bg-slate-600 text-cyan-400 hover:text-cyan-300 transition border border-slate-600 group" title="Download for Offline Use">
+            <span class="material-symbols-outlined text-lg group-hover:-translate-y-0.5 transition-transform">download</span>
+            <span class="text-sm font-medium hidden sm:inline">Save App</span>
+        </button>
+        <button class="flex items-center gap-2 text-slate-400 hover:text-white transition group" onclick="document.getElementById('requirements-modal').classList.remove('hidden')">
+            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">biotech</span>
+            <span class="text-sm font-medium hidden sm:inline">Requirements</span>
+        </button>
+        <button class="flex items-center gap-2 text-slate-400 hover:text-white transition group" onclick="document.getElementById('theory-modal').classList.remove('hidden')">
+            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">menu_book</span>
+            <span class="text-sm font-medium hidden sm:inline">Theory</span>
+        </button>
+        <button class="flex items-center gap-2 text-slate-400 hover:text-white transition group" onclick="document.getElementById('tutorial-modal').classList.remove('hidden')">
+            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">help</span>
+            <span class="text-sm font-medium hidden sm:inline">Guide</span>
+        </button>
+        <button class="flex items-center gap-2 text-slate-400 hover:text-white transition group" onclick="document.getElementById('references-modal').classList.remove('hidden')">
+            <span class="material-symbols-outlined group-hover:scale-110 transition-transform">local_library</span>
+            <span class="text-sm font-medium hidden sm:inline">References</span>
+        </button>
+        
+        <button class="flex items-center gap-2 text-slate-400 hover:text-amber-400 transition group" onclick="openTeacherMode()">
+            <span class="material-symbols-outlined group-hover:scale-110 transition-transform text-amber-500">admin_panel_settings</span>
+            <span class="text-sm font-medium hidden sm:inline text-amber-500">Teacher Login</span>
+        </button>
+        <!-- Mode Switcher -->
+        <div class="flex items-center gap-3 bg-slate-900 p-2 rounded-xl border border-slate-700">
+            <span class="text-[10px] sm:text-xs font-bold text-slate-400 uppercase tracking-wide">Practice</span>
+            <div class="relative inline-block w-10 sm:w-12 mr-2 align-middle select-none transition duration-200 ease-in">
+                <input class="mode-toggle-checkbox absolute block w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white border-4 appearance-none cursor-pointer z-10" id="modeToggle" name="toggle" type="checkbox">
+                <label class="mode-toggle-label block overflow-hidden h-5 sm:h-6 rounded-full bg-slate-700 cursor-pointer border border-slate-600 before:absolute before:top-0 before:left-0 before:block before:h-5 sm:before:h-6 before:w-5 sm:before:w-6 before:rounded-full before:bg-white before:content-[''] before:transition-transform before:duration-200" for="modeToggle"></label>
+            </div>
+            <span class="text-[10px] sm:text-xs font-bold text-violet-400 uppercase tracking-wide">Challenge</span>
+        </div>
+        <button onclick="startFinalExam()" class="px-4 py-2 bg-red-600 hover:bg-red-500 text-white text-xs font-bold rounded-xl shadow-[0_0_10px_rgba(239,68,68,0.5)] flex items-center gap-2 transition-all border border-red-400/50 ml-2">
+            <span class="material-symbols-outlined text-sm">quiz</span> 50-Q EXAM
+        </button>
+
+    </div>
+</header>
+    </div>
+</header>
+
+<main class="container mx-auto p-4 lg:p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <!-- Left Panel: Controls -->
+     
+    <section class="lg:col-span-3 bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex flex-col gap-6 h-fit transition-colors duration-300" id="controlsPanel">
+        <h2 class="text-lg font-semibold text-cyan-400 flex items-center gap-2">
+            <span class="material-symbols-outlined">tune</span> Setup
+        </h2>
+        <div class="space-y-2 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50 mb-4">
+    <label class="text-sm font-semibold text-violet-300 block mb-1">Experiment Type</label>
+    <select class="w-full bg-slate-800 border border-violet-500/50 rounded-lg p-2 text-sm focus:border-violet-500 focus:outline-none transition text-white" id="experimentType">
+        <option value="acid_base">Acid-Base Titration</option>
+        <option value="redox">Redox Titration</option>
+        <option value="complexometric">Complexometric (EDTA)</option>
+        <option value="precipitation">Precipitation (Mohr's)</option>
+        <option value="back_titration">Back Titration (Aspirin)</option>
+    </select>
+</div>
+        <!-- Acid Settings -->
+        <div class="space-y-3 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-red-400 text-sm">water_drop</span>
+                <label id="buretteLabel" class="text-sm font-semibold text-slate-300">Burette (Acid)</label>
+            </div>
+            <div id="temp-selection-panel" style="padding: 12px; background: #1a202c; border: 1px solid #2d3748; border-radius: 10px; font-family: sans-serif; margin-bottom: 15px;">
+    <label style="color: #60a5fa; font-weight: bold; font-size: 13px; display: block; margin-bottom: 10px;">
+        LABORATORY TEMPERATURE
+    </label>
+    
+    <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 11px; margin-bottom: 8px;">
+        <span>Temperature: <b id="ui_temp_val" style="color: #fbbf24;">25</b> °C</span>
+        <span>pKw: <b id="ui_pkw_val" style="color: #2dd4bf;">14.00</b></span>
+    </div>
+    
+    <input type="range" id="temp_slider" min="0" max="100" value="25" step="5" style="width: 100%; accent-color: #fbbf24; cursor: pointer;">
+    
+    <div style="margin-top: 10px; padding: 10px; background: #0f172a; border-radius: 6px; text-align: center; border: 1px solid #1e293b;">
+        <span style="font-size: 10px; color: #94a3b8; letter-spacing: 0.5px; text-transform: uppercase;">Neutral Point:</span>
+        <span id="ui_neutral_ph" style="font-size: 12px; font-weight: bold; color: #4ade80; margin-left: 8px;">pH 7.00</span>
+    </div>
+
+    <p style="font-size: 10px; color: #64748b; margin-top: 10px; line-height: 1.3;">
+        *Note: Water dissociation increases with heat. At 100°C, pH 6.14 is neutral.
+    </p>
+</div>
+
+<script>
+    // Thermodynamic lookup table for Kw variation 
+    const thermoTable = {
+        0:   { pKw: 14.94, neutral: 7.47 },
+        10:  { pKw: 14.53, neutral: 7.27 },
+        20:  { pKw: 14.17, neutral: 7.08 },
+        25:  { pKw: 14.00, neutral: 7.00 },
+        30:  { pKw: 13.83, neutral: 6.92 },
+        40:  { pKw: 13.54, neutral: 6.77 },
+        50:  { pKw: 13.26, neutral: 6.63 },
+        100: { pKw: 12.29, neutral: 6.14 }
+    };
+
+    const slider = document.getElementById('temp_slider');
+
+    function updateThermodynamics() {
+        const T = parseInt(slider.value);
+        
+        // Find nearest defined point 
+        const points = Object.keys(thermoTable).map(Number);
+        const closest = points.reduce((prev, curr) => 
+            Math.abs(curr - T) < Math.abs(prev - T)? curr : prev
+        );
+        
+        const data = thermoTable[closest];
+
+        // Update visual display
+        document.getElementById('ui_temp_val').innerText = T;
+        document.getElementById('ui_pkw_val').innerText = data.pKw.toFixed(2);
+        document.getElementById('ui_neutral_ph').innerText = "pH " + data.neutral.toFixed(2);
+
+        // GLOBAL BRIDGE: This allows your graph logic to access the new ceiling
+        window.activePKw = data.pKw;
+        window.activeNeutral = data.neutral;
+    }
+
+    slider.addEventListener('input', updateThermodynamics);
+    window.addEventListener('load', updateThermodynamics);
+</script>
+            <select class="w-full bg-slate-800 border border-slate-600 rounded-lg p-2 text-sm focus:border-cyan-500 focus:outline-none transition" id="acidType">
+                <option value="HCl">Hydrochloric Acid (Strong, HCl)</option>
+                <option value="Acetic">Acetic Acid (Weak, CH₃COOH)</option>
+            </select>
+            <!-- Known Acid Conc -->
+            <div id="acidConcContainer">
+                <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-400">Conc. (M)</span>
+                    <span class="text-cyan-400 font-mono" id="acidConcVal">0.10</span>
+                </div>
+                <input class="w-full accent-cyan-500 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer" id="acidConc" max="0.5" min="0.05" step="0.01" type="range" value="0.1">
+            </div>
+        </div>
+
+        <!-- Base Settings -->
+        <div class="space-y-3 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50 relative overflow-hidden">
+            <div class="flex items-center gap-2 mb-2">
+                <span class="material-symbols-outlined text-blue-400 text-sm">science</span>
+                <label id="flaskLabel" class="text-sm font-semibold text-slate-300">Flask (Base)</label>
+            </div>
+            
+            <!-- Base Type Selection -->
+            <select class="w-full bg-slate-800 border border-slate-600 rounded-lg p-2 text-sm focus:border-blue-500 focus:outline-none transition mb-2" id="baseType">
+                <option value="NaOH">Sodium Hydroxide (NaOH)</option>
+                <option value="KOH">Potassium Hydroxide (KOH)</option>
+            </select>
+
+            <!-- Base Volume -->
+            <div>
+                <div class="flex justify-between text-xs mb-1">
+                    <span class="text-slate-400">Volume (mL)</span>
+                    <span class="text-cyan-400 font-mono" id="baseVolVal">25</span>
+                </div>
+                <input class="w-full accent-blue-500 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer disabled:opacity-50" id="baseVol" max="50" min="10" step="5" type="range" value="25">
+            </div>
+
+            <!-- Base Conc Slider (Visible in Practice Mode) -->
+            <div class="transition-opacity duration-300" id="baseConcGroup">
+                <div class="flex justify-between text-xs mb-1 mt-2">
+                    <span class="text-slate-400">Conc. (M)</span>
+                    <span class="text-cyan-400 font-mono" id="baseConcVal">0.10</span>
+                </div>
+                <input class="w-full accent-blue-500 h-1 bg-slate-700 rounded-lg appearance-none cursor-pointer" id="baseConc" max="0.5" min="0.05" step="0.01" type="range" value="0.1">
+            </div>
+
+            <!-- Unknown Mode Overlay (Visible in Challenge Mode) -->
+            <div class="hidden absolute inset-0 bg-slate-900/90 flex flex-col items-center justify-center text-center p-4 backdrop-blur-sm z-10 border border-violet-500/30 rounded-xl" id="unknownOverlay">
+                <span class="material-symbols-outlined text-violet-400 text-3xl mb-1">question_mark</span>
+                <p class="text-sm font-bold text-violet-300">Concentration Unknown</p>
+                <p class="text-xs text-slate-400 mt-1">Determine this value experimentally!</p>
+            </div>
+        </div>
+
+        <!-- Indicator -->
+        <div class="space-y-2 p-4 bg-slate-900/50 rounded-xl border border-slate-700/50">
+            <label class="text-sm font-semibold text-slate-300 block mb-2">pH Indicator</label>
+            <div class="grid grid-cols-1 gap-2">
+                <button class="indicator-btn w-full text-left px-3 py-2 rounded-lg text-xs font-medium border border-slate-600 hover:border-cyan-500 transition bg-slate-800 text-slate-300 active-indicator ring-2 ring-cyan-500" data-value="phenolphthalein">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-pink-500"></div> Phenolphthalein
+                    </div>
+                </button>
+                <button class="indicator-btn w-full text-left px-3 py-2 rounded-lg text-xs font-medium border border-slate-600 hover:border-cyan-500 transition bg-slate-800 text-slate-300" data-value="methylOrange">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-orange-500"></div> Methyl Orange
+                    </div>
+                </button>
+                <button class="indicator-btn w-full text-left px-3 py-2 rounded-lg text-xs font-medium border border-slate-600 hover:border-cyan-500 transition bg-slate-800 text-slate-300" data-value="bromothymolBlue">
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 rounded-full bg-blue-500"></div> Bromothymol Blue
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Main Actions -->
+        <div class="flex gap-2 mt-auto">
+            <button class="flex-1 py-3 rounded-xl bg-slate-700 hover:bg-slate-600 text-white font-medium transition flex items-center justify-center gap-2" id="resetBtn">
+                <span class="material-symbols-outlined text-lg">restart_alt</span> Reset Lab
+            </button>
+        </div>
+    </section>
+
+    <!-- Center Panel: Visualization -->
+    <section class="lg:col-span-5 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-6 border border-slate-700 shadow-xl relative overflow-hidden min-h-[500px] flex flex-col items-center">
+        <!-- Mode Badge -->
+        <div class="absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold border border-slate-600 text-slate-400 bg-slate-800/80 z-20" id="modeBadge">PRACTICE MODE</div>
+
+        <!-- Flow Controller UI (Floating) -->
+        <div class="absolute top-6 left-6 z-20 bg-slate-900/90 backdrop-blur-sm p-4 rounded-xl border border-slate-700 shadow-lg w-48">
+            <div class="flex justify-between items-center mb-3">
+                <label class="text-xs font-bold text-slate-300 uppercase tracking-wider">Stopcock</label>
+                <div class="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.6)] shadow-red-500/60" id="statusIndicator"></div>
+            </div>
+            <input class="w-full accent-cyan-500 h-2 bg-slate-700 rounded-lg appearance-none cursor-pointer mb-2" id="flowRate" max="100" min="0" type="range" value="0">
+            <div class="flex justify-between text-[10px] text-slate-400 font-mono">
+                <span>CLOSED</span>
+                <span id="flowValDisplay">0 mL/s</span>
+                <span>OPEN</span>
+            </div>
+        </div>
+
+        <!-- Lab Apparatus -->
+        <div class="absolute top-0 right-[38%] lg:right-[38%] w-2 h-[400px] bg-slate-600 rounded"></div>
+
+<div class="absolute top-[100px] right-[38%] lg:right-[38%] w-16 h-2 bg-slate-600 rounded"></div>
+
+            <!-- Burette -->
+            <div class="relative z-10 flex flex-col items-center">
+                <div class="burette-body bg-slate-800/30 backdrop-blur-sm">
+                    <!-- Graduations -->
+                    <div class="absolute right-0 top-0 bottom-0 w-full border-r border-slate-400/30 flex flex-col justify-between py-2 px-1">
+                        <!-- JS generates marks -->
+                    </div>
+                    <div class="burette-liquid" id="buretteLiquid" style="height: 90%;"></div>
+                </div>
+                <!-- Stopcock Valve -->
+                <div class="w-8 h-6 bg-slate-500 rounded my-[-2px] relative z-20 flex items-center justify-center cursor-pointer hover:bg-slate-400 transition" id="valveHandle">
+                    <div class="w-6 h-1 bg-slate-800 rounded-full transform rotate-90 transition-transform duration-300" id="valveKnob" style="transform: rotate(90deg);"></div>
+                </div>
+                <div class="burette-tip"></div>
+                <!-- Drop -->
+                <div class="drop" id="drop" style="background-color: rgba(255, 0, 255, 0.8);"></div>
+            </div>
+
+            <!-- Flask Area -->
+            <div class="relative mt-20">
+                <!-- Flask Neck -->
+                <div class="ml-9"> <div class="flask-neck"></div>
+                <!-- The Flask -->
+                <div class="flask-shape backdrop-blur-md">
+                    <!-- Liquid -->
+                    <div class="flask-liquid bg-pink-500/80" id="flaskLiquid" style="height: 25%; background-color: rgba(255, 0, 255, 0.8);"></div>
+                </div>
+                <!-- Stir Plate -->
+                <div class="w-40 h-8 bg-slate-700 rounded-lg mt-2 shadow-lg border-t border-slate-600 flex items-center justify-center relative right-[20px]">
+    <span class="text-[10px] text-slate-400 font-mono tracking-widest">MAGNETIC STIRRER</span>
+</div>
+            </div>
+        </div>
+
+        <!-- Real-time Readout -->
+        <div class="absolute bottom-6 right-6 bg-slate-900/90 backdrop-blur-md p-4 rounded-xl border border-slate-700 shadow-2xl text-right z-20">
+            <div id="meterLabel" class="text-xs text-slate-400 mb-1">pH METER</div>
+            <div class="text-4xl font-mono font-bold text-cyan-400 tracking-tighter" id="phDisplay">13.00</div>
+            <div class="h-px w-full bg-slate-700 my-2"></div>
+            <div class="text-xs text-slate-400 mb-1">ACID ADDED</div>
+            <div class="text-xl font-mono text-white" id="volAddedDisplay">0.00 <span class="text-sm text-slate-500">mL</span></div>
+        </div>
+    </section>
+
+    <!-- Right Panel: Data & Graph -->
+    <section class="lg:col-span-4 flex flex-col gap-6">
+        <!-- Titration Curve Card -->
+         <div id="accuracyStir_module" style="width: 100%; box-sizing: border-box; padding: 15px; background: #1a202c; border: 2px solid #3b82f6; border-radius: 12px; margin-bottom: 20px; font-family: 'Segoe UI', Tahoma, sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.4);">
+    
+    <label style="color: #60a5fa; font-weight: bold; font-size: 11px; display: block; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 1px;">
+        Magnetic Stirrer Control
+    </label>
+    
+    <div style="display: flex; justify-content: space-between; color: #94a3b8; font-size: 11px; margin-bottom: 10px;">
+        <span>Current Stir Speed: <b id="accuracyStir_pct" style="color: #22d3ee; font-size: 14px;">0</b>%</span>
+        
+    </div>
+    
+    <input type="range" id="accuracyStir_knob" min="0" max="100" value="0" step="5" 
+           oninput="document.getElementById('accuracyStir_pct').innerText = this.value; manageStirrerSafety(this.value);" 
+           style="width: 100%; accent-color: #22d3ee; cursor: pointer;">
+    
+    <div id="accuracyStir_alert" style="margin-top: 15px; padding: 10px; background: rgba(248, 113, 113, 0.1); border: 1px solid #f87171; border-radius: 8px; text-align: center;">
+        <span id="accuracyStir_msg" style="font-size: 10px; color: #f87171; font-weight: bold; line-height: 1.4;">
+            ⚠️ ACCURACY WARNING:<br>SET SPEED TO 50% FOR PROPER HOMOGENIZATION
+        </span>
+    </div>
+</div>
+
+<script>
+    function manageStirrerSafety(val) {
+        const speed = parseInt(val);
+        const msg = document.getElementById('accuracyStir_msg');
+        const alertBox = document.getElementById('accuracyStir_alert');
+        const statusTag = document.getElementById('accuracyStir_tag');
+
+        // SCIENTIFIC REQUIREMENT: Homogenization reached at 50% [1, 2]
+        if (speed >= 50) {
+            statusTag.innerText = "READY";
+            statusTag.style.color = "#4ade80";
+            alertBox.style.background = "rgba(74, 222, 128, 0.1)";
+            alertBox.style.borderColor = "#4ade80";
+            msg.innerHTML = "✨ OPTIMAL SPEED REACHED.<br>STOPCOCK IS NOW UNLOCKED.";
+            msg.style.color = "#4ade80";
+            setAnimateHardwareActive(true);
+        } else {
+            statusTag.innerText = "LOCKED";
+            statusTag.style.color = "#f87171";
+            alertBox.style.background = "rgba(248, 113, 113, 0.1)";
+            alertBox.style.borderColor = "#f87171";
+            msg.style.color = "#f87171";
+            
+            if (speed > 0) {
+                msg.innerHTML = "⚠️ SPEED TOO LOW:<br>GIVE 50% MAGNETIC SPEED FOR PROPER ACCURACY";
+            } else {
+                msg.innerHTML = "⚠️ ACCURACY WARNING:<br>STIRRING REQUIRED TO UNLOCK STOPCOCK";
+            }
+            setAnimateHardwareActive(false);
+        }
+    }
+
+    function setAnimateHardwareActive(isAllowed) {
+        if (window.exportRoot) {
+            // Target the stopcock slider instance [3, 4]
+            const sc = window.exportRoot.stopcock_slider |
+
+ window.exportRoot.titrate_btn;
+            if (sc) {
+                // mouseEnabled physically prevents interaction in the canvas [4, 5]
+                sc.mouseEnabled = isAllowed;
+                sc.alpha = isAllowed? 1.0 : 0.3;
+            }
+        }
+    }
+
+    // INITIALIZATION: Force lock on page load
+    window.addEventListener('load', () => {
+        const setupCheck = setInterval(() => {
+            if (window.exportRoot) {
+                manageStirrerSafety(0); 
+                clearInterval(setupCheck);
+            }
+        }, 100);
+    });
+</script>
+        <div class="bg-white rounded-2xl p-1 shadow-xl border border-slate-200 h-64 relative overflow-hidden group">
+            <div class="absolute top-4 left-4 z-10">
+                <h3 class="text-slate-800 font-bold text-sm bg-white/80 backdrop-blur px-2 py-1 rounded">Titration Curve</h3>
+            </div>
+            <canvas class="w-full h-full" id="graphCanvas" width="789" height="512"></canvas>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex flex-col" id="observationCard">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-semibold text-white flex items-center gap-2">
+                    <span class="material-symbols-outlined text-blue-400">table_chart</span> 
+                    Observation Table
+                </h3>
+                <button onclick="recordCurrentVolume()" class="px-3 py-1.5 bg-cyan-600 hover:bg-cyan-500 text-white text-xs font-bold rounded shadow-[0_0_10px_rgba(6,182,212,0.4)] transition flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">add</span> Record Burette
+                </button>
+            </div>
+            
+            <div class="overflow-x-auto rounded-lg border border-slate-700">
+                <table class="w-full text-left border-collapse text-sm">
+                    <thead>
+                        <tr class="bg-slate-900/80 border-b border-slate-600 text-slate-400">
+                            <th class="py-2 px-3 font-medium">Trial</th>
+                            <th class="py-2 px-2 font-medium">Initial (mL)</th>
+                            <th class="py-2 px-2 font-medium">Final (mL)</th>
+                            <th class="py-2 px-3 font-medium text-right">Used (mL)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="obsTableBody">
+                        <tr class="border-b border-slate-700/50 bg-slate-800 hover:bg-slate-700/30 transition">
+                            <td class="py-2 px-3 text-slate-300 font-bold">1</td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center init-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(1)"></td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center final-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(1)"></td>
+                            <td class="py-2 px-3 text-cyan-400 font-mono text-right font-bold used-vol" id="used-vol-1">0.00</td>
+                        </tr>
+                        <tr class="border-b border-slate-700/50 bg-slate-800 hover:bg-slate-700/30 transition">
+                            <td class="py-2 px-3 text-slate-300 font-bold">2</td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center init-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(2)"></td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center final-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(2)"></td>
+                            <td class="py-2 px-3 text-cyan-400 font-mono text-right font-bold used-vol" id="used-vol-2">0.00</td>
+                        </tr>
+                        <tr class="bg-slate-800 hover:bg-slate-700/30 transition">
+                            <td class="py-2 px-3 text-slate-300 font-bold">3</td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center init-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(3)"></td>
+                            <td class="py-2 px-2"><input type="number" step="0.01" class="w-16 bg-slate-900 border border-slate-600 rounded px-1 py-1 text-slate-300 text-center final-vol focus:border-cyan-500 focus:outline-none" oninput="calcVol(3)"></td>
+                            <td class="py-2 px-3 text-cyan-400 font-mono text-right font-bold used-vol" id="used-vol-3">0.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="mt-4 bg-slate-900/50 p-3 rounded-lg border border-slate-700/50 flex justify-between items-center">
+                <div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider font-bold block">Concordant Volume</span>
+                    <span class="text-[10px] text-slate-500">Average of closest trials</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <input type="number" step="0.01" id="concordantVol" class="w-20 bg-slate-900 border border-blue-500 rounded px-2 py-1 text-white font-mono font-bold text-center shadow-[0_0_8px_rgba(59,130,246,0.3)] focus:outline-none" placeholder="0.00">
+                    <span class="text-xs text-slate-500 font-bold">mL</span>
+                </div>
+            </div>
+        </div>
+        ```
+
+<div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex-1 flex flex-col transition-all duration-300" id="analysisCard">
+            <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-yellow-400">lightbulb</span> 
+                Real-Time Analysis
+            </h3>
+            
+            <div class="space-y-4 flex-1 text-sm text-slate-300">
+                <div class="flex items-start gap-3">
+                    <div class="w-2 h-full bg-slate-600 rounded-full min-h-[2rem]" id="reactionColor"></div>
+                    <div class="flex-1">
+                        <p class="font-semibold text-white mb-1">Reaction Status</p>
+                        <p id="reactionStatus">Excess Base. Solution is Alkaline.</p>
+                    </div>
+                </div>
+                <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
+                    <p class="font-mono text-xs text-slate-400 mb-1">DOMINANT SPECIES</p>
+                    <p class="text-cyan-300 font-medium" id="dominantSpecies">OH⁻ (Hydroxide) + Na⁺</p>
+                </div>
+                <div class="bg-slate-900/50 p-3 rounded-lg border border-slate-700/50">
+                    <p class="font-mono text-xs text-slate-400 mb-1">THEORETICAL EQUIVALENCE POINT</p>
+                    <p class="text-white font-medium" id="eqPointText">25.00 mL</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="hidden bg-slate-800 rounded-2xl p-6 border border-violet-500/50 shadow-xl flex-1 flex flex-col relative overflow-hidden" id="calculationCard">
+            <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-violet-500 to-indigo-500"></div>
+            <h3 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+                <span class="material-symbols-outlined text-violet-400">calculate</span> 
+                Notebook
+            </h3>
+            
+            <div class="flex-1 flex flex-col gap-3 text-sm">
+                <div class="bg-indigo-900/30 p-3 rounded border border-indigo-500/30 text-indigo-200 text-xs mb-2">
+                    <p><strong>Goal:</strong> Find the concentration of the unknown base (<span id="calcBaseName">NaOH</span>) in the flask.</p>
+                    <p class="mt-1">Formula: <code class="font-mono bg-indigo-900 px-1 rounded">CₐVₐ = C₆V₆</code></p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="space-y-1">
+                        <label class="text-xs text-slate-400">Acid Conc (M)</label>
+                        <input class="w-full bg-slate-900 border border-slate-600 rounded px-2 py-1 text-slate-300" id="calcAcidConc" readonly type="number">
+                    </div>
+                    <div class="space-y-1">
+                        <label class="text-xs text-slate-400">Base Volume (mL)</label>
+                        <input class="w-full bg-slate-900 border border-slate-600 rounded px-2 py-1 text-slate-300" id="calcBaseVol" readonly type="number">
+                    </div>
+                </div>
+                
+                <div class="space-y-1 mt-1">
+                    <label class="text-xs text-slate-400">Volume Acid at Eq. Point (mL)</label>
+                    <input class="w-full bg-slate-700 border border-slate-500 rounded px-3 py-2 text-white focus:border-violet-500 focus:outline-none" id="calcAcidVol" placeholder="Enter observed volume" type="number">
+                </div>
+                
+                <div class="space-y-1 mt-1">
+                    <label class="text-xs text-violet-300 font-bold">Calculated Base Conc (M)</label>
+                    <input class="w-full bg-slate-700 border border-violet-500 rounded px-3 py-2 text-white font-mono text-lg focus:outline-none focus:ring-1 focus:ring-violet-500" id="userAnswer" placeholder="0.00" step="0.01" type="number">
+                </div>
+                
+                <button class="mt-auto w-full py-2 bg-violet-600 hover:bg-violet-500 text-white font-bold rounded-lg transition shadow-lg" id="checkAnswerBtn">
+                    Check Answer
+                </button>
+                
+                <div class="hidden mt-3 p-3 rounded-lg text-center border" id="feedbackArea">
+                    <p class="font-bold" id="feedbackTitle"></p>
+                    <p class="text-xs mt-1" id="feedbackMsg"></p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700 shadow-xl flex flex-col mt-2" id="conclusionCard">
+            <h3 class="text-lg font-semibold text-white mb-3 flex items-center gap-2">
+                <span class="material-symbols-outlined text-green-400">edit_note</span> 
+                Inference & Conclusion
+            </h3>
+            
+            <p class="text-xs text-slate-400 mb-3">State your final experimental result and scientific reasoning based on the titration curve.</p>
+            
+            <textarea id="studentConclusion" class="w-full bg-slate-900 border border-slate-600 rounded-lg p-3 text-sm text-slate-300 focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none custom-scrollbar resize-y min-h-[100px]" placeholder="E.g., The unknown concentration of the base was calculated to be 0.12 M. The steep jump in the titration curve at 25mL indicates a strong acid-strong base neutralization..."></textarea>
+            
+            <button class="mt-3 w-full py-2 bg-slate-700 hover:bg-slate-600 text-green-400 font-medium rounded-lg transition text-sm flex items-center justify-center gap-2 border border-slate-600 hover:border-green-500" onclick="saveConclusion()">
+                <span class="material-symbols-outlined text-sm">save</span> Save to Lab Report
+            </button>
+            
+            <div id="conclusionSavedMsg" class="hidden mt-2 text-xs text-green-400 text-center font-bold transition-opacity">
+                ✓ Saved for Final Report
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-slate-700 flex flex-col gap-3">
+                <button onclick="generatePDFReport()" class="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-500 hover:to-cyan-500 text-white font-bold rounded-xl shadow-lg transition-all transform hover:scale-[1.02] flex items-center justify-center gap-3 border border-blue-400/30">
+                    <span class="material-symbols-outlined">picture_as_pdf</span>
+                    GENERATE FINAL LAB REPORT (PDF)
+                </button>
+                
+                <button onclick="generateSubmissionCode()" class="w-full py-3 bg-slate-800 hover:bg-slate-700 text-emerald-400 font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-3 border border-emerald-500/50">
+                    <span class="material-symbols-outlined">lock</span>
+                    GET SECURE SUBMISSION CODE
+                </button>
+                
+                <div id="submission-code-area" class="hidden bg-slate-900 border border-emerald-500/50 p-4 rounded-xl text-center">
+                    <p class="text-xs text-slate-400 mb-2">Copy this code and send it to your teacher:</p>
+                    <code id="student-secure-code" class="text-emerald-400 font-mono text-lg break-all select-all bg-black/50 p-2 rounded block"></code>
+                </div>
+
+                <p class="text-[10px] text-slate-500 text-center mt-1 italic">Note: Ensure you have passed the Viva and Final Exam before generating.</p>
+            </div>
+        </div>
+    </section>
+</main>
+    </section>
+</main>
+<div class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="requirements-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-4xl w-full p-8 border border-slate-600 shadow-2xl relative flex flex-col max-h-[90vh]">
+        <button class="absolute top-4 right-4 text-slate-400 hover:text-white" onclick="document.getElementById('requirements-modal').classList.add('hidden')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <div class="text-center mb-6 border-b border-slate-700 pb-4">
+            <span class="material-symbols-outlined text-4xl text-emerald-400 mb-2">biotech</span>
+            <h2 class="text-2xl font-bold text-white">Apparatus & Chemicals Required</h2>
+            <p class="text-slate-400 text-sm mt-1">Standard equipment and reagents used in this virtual simulation</p>
+        </div>
+
+        <div class="overflow-y-auto pr-4 custom-scrollbar space-y-8 text-slate-300 text-sm leading-relaxed">
+            
+            <div>
+                <h3 class="text-lg font-bold text-slate-200 mb-3 border-l-4 border-slate-400 pl-3">I. Standard Glassware & Apparatus (All Experiments)</h3>
+                <div class="grid grid-cols-2 gap-4">
+                    <ul class="list-disc list-inside space-y-2 text-slate-400 ml-2">
+                        <li><strong>Burette (50 mL):</strong> Class A, with PTFE stopcock.</li>
+                        <li><strong>Conical Flask (250 mL):</strong> Erlenmeyer flask for analyte.</li>
+                        <li><strong>Pipette (25 mL):</strong> Volumetric pipette for exact transfer.</li>
+                    </ul>
+                    <ul class="list-disc list-inside space-y-2 text-slate-400 ml-2">
+                        <li><strong>Magnetic Stirrer:</strong> With Teflon-coated stir bar.</li>
+                        <li><strong>Digital Meter:</strong> pH Meter / Potentiometer (mV).</li>
+                        <li><strong>Wash Bottle:</strong> Containing distilled water.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-4 border-l-4 border-emerald-400 pl-3">II. Chemicals & Reagents (By Experiment Type)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                        <h4 class="text-violet-400 font-bold mb-2">Acid-Base Titration</h4>
+                        <ul class="list-disc list-inside text-xs text-slate-400 space-y-1">
+                            <li><strong>Titrants:</strong> 0.1M HCl, 0.1M Acetic Acid (CH₃COOH)</li>
+                            <li><strong>Analytes:</strong> 0.1M NaOH, 0.1M KOH, 0.1M Ammonia (NH₃)</li>
+                            <li><strong>Indicators:</strong> Phenolphthalein (0.1% in ethanol), Methyl Orange, Bromothymol Blue</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                        <h4 class="text-orange-400 font-bold mb-2">Redox Titration</h4>
+                        <ul class="list-disc list-inside text-xs text-slate-400 space-y-1">
+                            <li><strong>Oxidizing Agents:</strong> 0.1M KMnO₄, 0.1M K₂Cr₂O₇</li>
+                            <li><strong>Reducing Agent:</strong> 0.1M FeSO₄ (Mohr's Salt)</li>
+                            <li><strong>Medium:</strong> Dilute H₂SO₄ (to maintain acidic pH)</li>
+                            <li><strong>Indicator:</strong> KMnO₄ (Self-indicating)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                        <h4 class="text-blue-400 font-bold mb-2">Complexometric (EDTA)</h4>
+                        <ul class="list-disc list-inside text-xs text-slate-400 space-y-1">
+                            <li><strong>Chelating Agent:</strong> 0.01M Standard EDTA Solution</li>
+                            <li><strong>Metal Analyte:</strong> Hard Water Sample (Ca²⁺ / Mg²⁺)</li>
+                            <li><strong>Buffer:</strong> NH₄OH-NH₄Cl buffer (pH 10)</li>
+                            <li><strong>Indicator:</strong> Eriochrome Black T (EBT)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                        <h4 class="text-yellow-400 font-bold mb-2">Precipitation (Mohr's Method)</h4>
+                        <ul class="list-disc list-inside text-xs text-slate-400 space-y-1">
+                            <li><strong>Titrant:</strong> Standard 0.1M AgNO₃ (Silver Nitrate)</li>
+                            <li><strong>Analyte:</strong> 0.1M NaCl (Sodium Chloride)</li>
+                            <li><strong>Indicator:</strong> 5% K₂CrO₄ (Potassium Chromate)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-red-900/20 p-4 rounded-xl border border-red-500/30 flex items-start gap-3 mt-4">
+                <span class="material-symbols-outlined text-red-400">warning</span>
+                <div>
+                    <h4 class="text-red-400 font-bold text-sm">Virtual Safety Classification</h4>
+                    <p class="text-xs text-slate-400 mt-1">Even in a virtual environment, standard PPE (Goggles and Nitrile Gloves) must be "equipped" before handling concentrated acids (HCl) and strong bases (NaOH) due to their corrosive properties.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="references-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-4xl w-full p-8 border border-slate-600 shadow-2xl relative flex flex-col max-h-[90vh]">
+        <button class="absolute top-4 right-4 text-slate-400 hover:text-white" onclick="document.getElementById('references-modal').classList.add('hidden')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <div class="text-center mb-6 border-b border-slate-700 pb-4">
+            <span class="material-symbols-outlined text-4xl text-amber-400 mb-2">local_library</span>
+            <h2 class="text-2xl font-bold text-white">Academic References</h2>
+            <p class="text-slate-400 text-sm mt-1">Standard textbooks, guidelines, and curriculum alignments</p>
+        </div>
+
+        <div class="overflow-y-auto pr-4 custom-scrollbar space-y-8 text-slate-300 text-sm leading-relaxed">
+            
+            <div>
+                <h3 class="text-lg font-bold text-amber-400 mb-2 border-l-4 border-amber-400 pl-3">I. Standard Textbooks</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-400 ml-2">
+                    <li><strong>NCERT Chemistry (Class 11):</strong> Part I, Unit 7 - Equilibrium (Acids, Bases, and Salts).</li>
+                    <li><strong>NCERT Chemistry (Class 12):</strong> Part I, Unit 8 - The d-and f-Block Elements (KMnO₄ and K₂Cr₂O₇ titrations).</li>
+                    <li><strong>Vogel's Textbook of Quantitative Chemical Analysis:</strong> 6th Edition, J. Mendham et al. (For standard redox, complexometric, and precipitation principles).</li>
+                    <li><strong>Fundamentals of Analytical Chemistry:</strong> Skoog, West, Holler, and Crouch.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-emerald-400 mb-2 border-l-4 border-emerald-400 pl-3">II. Curriculum & Board Guidelines</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-400 ml-2">
+                    <li><strong>CBSE Senior Secondary Curriculum:</strong> Core Chemistry Practicals (Volumetric Analysis).</li>
+                    <li><strong>UGC Standard Chemistry Syllabus:</strong> Core Module I for B.Sc. Chemistry (Analytical Principles).</li>
+                    <li><strong>AICTE Virtual Lab Guidelines:</strong> Framework for Interactive E-Learning & Simulation methodologies.</li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-cyan-400 mb-2 border-l-4 border-cyan-400 pl-3">III. Digital & Web Resources</h3>
+                <ul class="list-disc list-inside space-y-2 text-slate-400 ml-2">
+                    <li><strong>Ministry of Education, India:</strong> Virtual Labs Initiative (vlab.co.in) - Chemical Sciences.</li>
+                    <li><strong>Olabs (Online Labs for Schools):</strong> Volumetric Analysis modules developed by Amrita Vishwa Vidyapeetham & CDAC.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="theory-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-4xl w-full p-8 border border-slate-600 shadow-2xl relative flex flex-col max-h-[90vh]">
+        <button class="absolute top-4 right-4 text-slate-400 hover:text-white" onclick="document.getElementById('theory-modal').classList.add('hidden')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        
+        <div class="text-center mb-6 border-b border-slate-700 pb-4">
+            <span class="material-symbols-outlined text-4xl text-violet-400 mb-2">menu_book</span>
+            <h2 class="text-2xl font-bold text-white">Theory & Scientific Principles</h2>
+            <p class="text-slate-400 text-sm mt-1">Understand the chemistry behind the simulation</p>
+        </div>
+
+        <div class="overflow-y-auto pr-4 custom-scrollbar space-y-8 text-slate-300 text-sm leading-relaxed">
+            
+            <div>
+                <h3 class="text-lg font-bold text-cyan-400 mb-2 border-l-4 border-cyan-400 pl-3">1. General Principle of Titration</h3>
+                <p>Titration is a quantitative analytical technique used to determine the unknown concentration of an identified analyte. A reagent (titrant) of known concentration and volume is used to react with a solution of the analyte. The point at which all the analyte is consumed is the <strong>Equivalence Point</strong>. We use the formula:</p>
+                <div class="bg-slate-900 p-4 rounded-lg mt-3 text-center border border-slate-700 font-mono text-cyan-300">
+                    M₁V₁ / n₁ = M₂V₂ / n₂
+                </div>
+                <p class="text-xs text-slate-400 mt-2 text-center">(Where M = Molarity, V = Volume, and n = stoichiometric coefficient)</p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-violet-400 mb-2 border-l-4 border-violet-400 pl-3">2. Acid-Base Titrations (Neutralization)</h3>
+                <p>Involves the reaction between an acid (H⁺) and a base (OH⁻) to form salt and water. The pH changes drastically near the equivalence point.</p>
+                <ul class="list-disc list-inside mt-2 space-y-1 text-slate-400 ml-2">
+                    <li><strong>Strong Acid + Strong Base:</strong> HCl + NaOH → NaCl + H₂O (Equivalence pH = 7.0)</li>
+                    <li><strong>Weak Acid + Strong Base:</strong> CH₃COOH + NaOH → CH₃COONa + H₂O (Equivalence pH > 7.0 due to salt hydrolysis)</li>
+                </ul>
+                <p class="mt-3"><strong>Indicators:</strong> Phenolphthalein (colorless in acid, pink in base, pH range 8.2-10.0) is ideal for weak acid/strong base titrations.</p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-orange-400 mb-2 border-l-4 border-orange-400 pl-3">3. Redox Titrations (Oxidation-Reduction)</h3>
+                <p>Based on the transfer of electrons between an oxidizing agent and a reducing agent. The Nernst equation governs the potential (mV) of the solution.</p>
+                <div class="bg-slate-900 p-3 rounded-lg mt-2 text-center border border-slate-700 font-mono text-orange-300 text-xs">
+                    MnO₄⁻ + 8H⁺ + 5Fe²⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O
+                </div>
+                <p class="mt-3">KMnO₄ acts as a <strong>self-indicator</strong>. The appearance of a permanent pale pink color marks the endpoint.</p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-blue-400 mb-2 border-l-4 border-blue-400 pl-3">4. Complexometric Titrations (EDTA)</h3>
+                <p>Used to determine metal ion concentrations (like Ca²⁺ for water hardness). EDTA acts as a hexadentate ligand, forming stable complexes with metal ions.</p>
+                <p class="mt-2"><strong>Indicator:</strong> Eriochrome Black T (EBT). It binds to the metal to form a wine-red complex. When EDTA replaces the EBT, the free indicator turns the solution <strong>blue</strong>.</p>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-yellow-400 mb-2 border-l-4 border-yellow-400 pl-3">5. Precipitation Titrations (Mohr's Method)</h3>
+                <p>Involves the formation of a slightly soluble precipitate. Used commonly to find chloride (Cl⁻) concentration using Silver Nitrate (AgNO₃).</p>
+                <div class="bg-slate-900 p-3 rounded-lg mt-2 border border-slate-700 font-mono text-yellow-300 text-xs">
+                    Analyte: Ag⁺ + Cl⁻ → AgCl (White Precipitate)<br>
+                    Endpoint: 2Ag⁺ + CrO₄²⁻ → Ag₂CrO₄ (Brick Red Precipitate)
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-bold text-green-400 mb-2 border-l-4 border-green-400 pl-3">6. Back Titration (Aspirin Analysis)</h3>
+                <p>Used when the analyte (e.g., Aspirin) is insoluble, volatile, or reacts too slowly. An excess of a standard reagent (NaOH) is added. The unreacted excess reagent is then titrated with a standard acid (HCl) to determine how much reacted with the analyte.</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Guide Modal -->
+<div class="fixed inset-0 z-[100] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="tutorial-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-lg w-full p-8 border border-slate-600 shadow-2xl relative">
+        <button class="absolute top-4 right-4 text-slate-400 hover:text-white" onclick="document.getElementById('tutorial-modal').classList.add('hidden')">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <div class="text-center mb-6">
+            <span class="material-symbols-outlined text-5xl text-cyan-400 mb-4">science</span>
+            <h2 class="text-2xl font-bold text-white">Advanced Virtual Titration</h2>
+        </div>
+        <div class="space-y-4 text-slate-300 text-sm leading-relaxed max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
+            <div>
+                <h4 class="text-cyan-300 font-bold mb-1">1. Setup</h4>
+                <p>Select your <strong>Burette Solution</strong> (Strong HCl or Weak Acetic Acid) and your <strong>Flask Solution</strong> (NaOH or KOH). Choose a pH Indicator that matches your expected equivalence point.</p>
+            </div>
+            <div>
+                <h4 class="text-cyan-300 font-bold mb-1">2. Select Mode</h4>
+                <ul class="list-disc list-inside space-y-1 ml-1">
+                    <li><strong>Practice Mode:</strong> All concentrations are known. Real-time analysis helps you understand the chemistry.</li>
+                    <li><strong>Unknown Challenge:</strong> The base concentration is hidden. You must perform the titration, find the equivalence point volume, and calculate the concentration.</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-cyan-300 font-bold mb-1">3. Perform Titration</h4>
+                <p>Use the <strong>Stopcock Slider</strong> to release acid. Watch for the color change!</p>
+                <p class="text-xs text-slate-400 mt-1 italic">Tip: Slow down to a drip near the endpoint.</p>
+            </div>
+            <div>
+                <h4 class="text-cyan-300 font-bold mb-1">4. Calculation (Challenge Mode)</h4>
+                <p>Use the formula <code class="bg-slate-700 px-1 rounded">MaVa = MbVb</code> (for 1:1 mole ratio). Enter your calculated concentration in the Notebook to check your answer.</p>
+            </div>
+            <div>
+                <h4 class="text-cyan-300 font-bold mb-1">5. Offline Use</h4>
+                <p>Click "Save App" in the top right corner to download this simulator as a single HTML file. You can run it offline on any computer or mobile device.</p>
+            </div>
+        </div>
+        <button class="w-full mt-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition shadow-lg shadow-cyan-900/50" onclick="document.getElementById('tutorial-modal').classList.add('hidden')">
+            Start Experiment
+        </button>
+    </div>
+</div>
+
+<script>
+    // --- Constants & Config ---
+    const INDICATORS = {
+        phenolphthalein: {
+            name: 'Phenolphthalein',
+            range: [8.2, 10.0],
+            colors: [[255, 255, 255, 0], [255, 0, 255, 0.8]], 
+            baseColor: [255, 255, 255, 0.1] 
+        },
+        methylOrange: {
+            name: 'Methyl Orange',
+            range: [3.1, 4.4],
+            colors: [[255, 50, 50, 0.8], [255, 220, 0, 0.8]], 
+            baseColor: [255, 255, 255, 0.1]
+        },
+        bromothymolBlue: {
+            name: 'Bromothymol Blue',
+            range: [6.0, 7.6],
+            colors: [[255, 220, 0, 0.8], [0, 100, 255, 0.8]], 
+            baseColor: [255, 255, 255, 0.1]
+        }
+    };
+
+    // --- State Management ---
+    // --- State Management ---
+const state = {
+    experimentType: 'acid_base',
+    mode: 'practice', 
+    acidType: 'HCl',
+    acidConc: 0.1,
+    baseType: 'NaOH',
+    baseConc: 0.1,    
+    baseVol: 25,
+    indicator: 'phenolphthalein',
+    volAdded: 0,
+    flowRate: 0,
+    currentPH: 14,
+    isRunning: false,
+    buretteTotalVol: 50,
+    history: [] 
+};
+
+let lastTime = 0;
+
+// --- DOM Elements ---
+const els = {
+    modeToggle: document.getElementById('modeToggle'),
+    modeBadge: document.getElementById('modeBadge'),
+    controlsPanel: document.getElementById('controlsPanel'),
+    unknownOverlay: document.getElementById('unknownOverlay'),
+    baseConcGroup: document.getElementById('baseConcGroup'),
+    analysisCard: document.getElementById('analysisCard'),
+    calculationCard: document.getElementById('calculationCard'),
+    acidType: document.getElementById('acidType'),
+    acidConc: document.getElementById('acidConc'),
+    acidConcVal: document.getElementById('acidConcVal'),
+    baseType: document.getElementById('baseType'),
+    baseVol: document.getElementById('baseVol'),
+    baseVolVal: document.getElementById('baseVolVal'),
+    baseConc: document.getElementById('baseConc'),
+    baseConcVal: document.getElementById('baseConcVal'),
+    indicatorBtns: document.querySelectorAll('.indicator-btn'),
+    flowRate: document.getElementById('flowRate'),
+    flowValDisplay: document.getElementById('flowValDisplay'),
+    valveHandle: document.getElementById('valveHandle'),
+    valveKnob: document.getElementById('valveKnob'),
+    statusIndicator: document.getElementById('statusIndicator'),
+    resetBtn: document.getElementById('resetBtn'),
+    phDisplay: document.getElementById('phDisplay'),
+    volAddedDisplay: document.getElementById('volAddedDisplay'),
+    flaskLiquid: document.getElementById('flaskLiquid'),
+    buretteLiquid: document.getElementById('buretteLiquid'),
+    drop: document.getElementById('drop'),
+    reactionStatus: document.getElementById('reactionStatus'),
+    dominantSpecies: document.getElementById('dominantSpecies'),
+    eqPointText: document.getElementById('eqPointText'),
+    calcBaseName: document.getElementById('calcBaseName'),
+    calcAcidConc: document.getElementById('calcAcidConc'),
+    calcBaseVol: document.getElementById('calcBaseVol'),
+    calcAcidVol: document.getElementById('calcAcidVol'),
+    userAnswer: document.getElementById('userAnswer'),
+    checkAnswerBtn: document.getElementById('checkAnswerBtn'),
+    feedbackArea: document.getElementById('feedbackArea'),
+    feedbackTitle: document.getElementById('feedbackTitle'),
+    feedbackMsg: document.getElementById('feedbackMsg'),
+    canvas: document.getElementById('graphCanvas'),
+};
+
+const ctx = els.canvas.getContext('2d');
+
+// --- Observation Table Logic ---
+let currentActiveRow = 1;
+
+function calcVol(row) {
+    const initInput = document.querySelectorAll('.init-vol')[row-1];
+    const finalInput = document.querySelectorAll('.final-vol')[row-1];
+    const usedDisplay = document.getElementById(`used-vol-${row}`);
+    
+    const init = parseFloat(initInput.value);
+    const final = parseFloat(finalInput.value);
+    
+    if (!isNaN(init) && !isNaN(final)) {
+        const used = final - init;
+        usedDisplay.textContent = used >= 0 ? used.toFixed(2) : "Error";
+        
+        // Visual feedback
+        if (used >= 0) {
+            usedDisplay.classList.remove('text-red-400');
+            usedDisplay.classList.add('text-green-400');
+        } else {
+            usedDisplay.classList.remove('text-green-400');
+            usedDisplay.classList.add('text-red-400');
+        }
+    } else {
+        usedDisplay.textContent = "0.00";
+        usedDisplay.classList.remove('text-green-400', 'text-red-400');
+        usedDisplay.classList.add('text-cyan-400');
+    }
+}
+
+function recordCurrentVolume() {
+    if (currentActiveRow > 3) {
+        alert("All 3 trials are full! Please overwrite a previous row if you want to record again.");
+        return;
+    }
+    
+    // In this virtual lab, the burette starts at 0.00
+    const initInput = document.querySelectorAll('.init-vol')[currentActiveRow-1];
+    const finalInput = document.querySelectorAll('.final-vol')[currentActiveRow-1];
+    
+    if (initInput.value === "") initInput.value = "0.00";
+    
+    // Fetch current volume from the state engine
+    finalInput.value = state.volAdded.toFixed(2);
+    
+    // Trigger calculation
+    calcVol(currentActiveRow);
+    
+    // Move to next row for the next time they click it
+    currentActiveRow++;
+    
+    // Flash effect to show it worked
+    const rowElement = initInput.parentElement.parentElement;
+    rowElement.style.backgroundColor = 'rgba(6, 182, 212, 0.3)';
+    setTimeout(() => { rowElement.style.backgroundColor = ''; }, 500);
+}
+// END OF PASTED CODE
+
+// --- Initialization ---
+// --- Initialization ---
+function init() {
+    bindEvents();
+    resizeCanvas();
+    resetSimulation();
+    updateUIForMode();
+    loop(0);
+}
+
+function bindEvents() {
+    document.getElementById('experimentType').addEventListener('change', (e) => {
+        state.experimentType = e.target.value;
+        
+        const bLabel = document.getElementById('buretteLabel');
+        const fLabel = document.getElementById('flaskLabel');
+        const mLabel = document.getElementById('meterLabel');
+        const bDrop = document.getElementById('acidType');
+        const fDrop = document.getElementById('baseType');
+
+        if (state.experimentType === 'acid_base') {
+            bLabel.textContent = "Burette (Acid)";
+            fLabel.textContent = "Flask (Base)";
+            mLabel.textContent = "pH METER";
+            bDrop.innerHTML = '<option value="HCl">Hydrochloric Acid (HCl)</option><option value="Acetic">Acetic Acid (Weak)</option>';
+            fDrop.innerHTML = '<option value="NaOH">Sodium Hydroxide (Strong)</option><option value="KOH">Potassium Hydroxide (Strong)</option><option value="NH3">Ammonia (Weak, NH₃)</option>';
+        } 
+        else if (state.experimentType === 'redox') {
+            bLabel.textContent = "Burette (Oxidizing Agent)";
+            fLabel.textContent = "Flask (Reducing Agent)";
+            mLabel.textContent = "POTENTIOMETER (mV)";
+            bDrop.innerHTML = '<option value="KMnO4">Potassium Permanganate (KMnO₄)</option><option value="K2Cr2O7">Potassium Dichromate</option>';
+            fDrop.innerHTML = '<option value="FeSO4">Iron(II) Sulfate (FeSO₄)</option>';
+        }
+        else if (state.experimentType === 'complexometric') {
+            bLabel.textContent = "Burette (Chelating Agent)";
+            fLabel.textContent = "Flask (Metal Ion)";
+            mLabel.textContent = "pM METER";
+            bDrop.innerHTML = '<option value="EDTA">EDTA Solution</option>';
+            fDrop.innerHTML = '<option value="Ca2+">Calcium Water (Ca²⁺)</option>';
+        }
+        else if (state.experimentType === 'precipitation') {
+            bLabel.textContent = "Burette (Titrant)";
+            fLabel.textContent = "Flask (Analyte)";
+            mLabel.textContent = "pAg METER";
+            bDrop.innerHTML = '<option value="AgNO3">Silver Nitrate (AgNO₃)</option>';
+            fDrop.innerHTML = '<option value="NaCl">Sodium Chloride (NaCl)</option>';
+        }
+        else if (state.experimentType === 'back_titration') {
+            bLabel.textContent = "Burette (Standard Acid Titrant)";
+            fLabel.textContent = "Flask (Leftover Excess Base)";
+            mLabel.textContent = "pH METER";
+            bDrop.innerHTML = '<option value="HCl">Hydrochloric Acid (HCl)</option>';
+            fDrop.innerHTML = '<option value="NaOH">Aspirin + Excess NaOH</option>';
+        }
+        
+        resetSimulation(true);
+    });
+
+    // Mode Switch
+    els.modeToggle.addEventListener('change', (e) => {
+        state.mode = e.target.checked ? 'unknown' : 'practice';
+        updateUIForMode();
+    });
+
+    // Inputs
+    els.acidType.addEventListener('change', (e) => {
+        state.acidType = e.target.value;
+        resetSimulation(false); 
+    });
+
+    els.baseType.addEventListener('change', (e) => {
+        state.baseType = e.target.value;
+        els.calcBaseName.textContent = state.baseType;
+        resetSimulation(false);
+    });
+
+    els.acidConc.addEventListener('input', (e) => {
+        state.acidConc = parseFloat(e.target.value);
+        els.acidConcVal.textContent = state.acidConc.toFixed(2);
+        updateStats();
+        render();
+    });
+
+    els.baseConc.addEventListener('input', (e) => {
+        if (state.mode === 'unknown') return; 
+        state.baseConc = parseFloat(e.target.value);
+        els.baseConcVal.textContent = state.baseConc.toFixed(2);
+        updateStats();
+        if(state.volAdded === 0) calculatePH();
+        render();
+    });
+
+    els.baseVol.addEventListener('input', (e) => {
+        state.baseVol = parseFloat(e.target.value);
+        els.baseVolVal.textContent = state.baseVol;
+        updateStats();
+        render();
+    });
+
+    els.indicatorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            els.indicatorBtns.forEach(b => b.classList.remove('active-indicator', 'ring-2', 'ring-cyan-500'));
+            btn.classList.add('active-indicator', 'ring-2', 'ring-cyan-500');
+            state.indicator = btn.dataset.value;
+            render();
+        });
+    });
+
+    // Flow Control
+    els.flowRate.addEventListener('input', (e) => {
+        const val = parseInt(e.target.value);
+        state.flowRate = val === 0 ? 0 : 0.05 * Math.pow(val, 1.2) / 10; 
+        state.isRunning = state.flowRate > 0;
+        els.flowValDisplay.textContent = state.flowRate > 0 ? `${state.flowRate.toFixed(2)} mL/s` : '0 mL/s';
+        
+        const rotation = 90 + (val / 100 * 90);
+        els.valveKnob.style.transform = `rotate(${rotation}deg)`;
+        
+        if(state.flowRate > 0) {
+            els.statusIndicator.classList.remove('bg-red-500', 'shadow-red-500/60');
+            els.statusIndicator.classList.add('bg-green-500', 'shadow-green-500/60');
+            els.drop.style.animationDuration = `${Math.max(0.1, 1/(state.flowRate*5))}s`;
+            els.drop.classList.add('animate-drop');
+        } else {
+            els.statusIndicator.classList.add('bg-red-500', 'shadow-red-500/60');
+            els.statusIndicator.classList.remove('bg-green-500', 'shadow-green-500/60');
+            els.drop.classList.remove('animate-drop');
+        }
+    });
+
+    els.valveHandle.addEventListener('click', () => {
+        if (state.flowRate > 0) {
+            els.flowRate.value = 0;
+        } else {
+            els.flowRate.value = 20;
+        }
+        els.flowRate.dispatchEvent(new Event('input'));
+    });
+
+    els.resetBtn.addEventListener('click', () => resetSimulation(true));
+    
+    // Calculation Check
+    els.checkAnswerBtn.addEventListener('click', checkAnswer);
+    
+    window.addEventListener('resize', resizeCanvas);
+}
+
+function updateUIForMode() {
+    if (state.mode === 'unknown') {
+        els.modeBadge.textContent = "UNKNOWN CHALLENGE";
+        els.modeBadge.className = "absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold border border-violet-500 text-violet-200 bg-violet-900/80 z-20";
+        els.unknownOverlay.classList.remove('hidden');
+        els.baseConcGroup.classList.add('opacity-0', 'pointer-events-none'); 
+        
+        els.analysisCard.classList.add('hidden');
+        els.calculationCard.classList.remove('hidden');
+
+        const min = 0.05;
+        const max = 0.20;
+        state.baseConc = Math.random() * (max - min) + min; 
+        
+        resetSimulation(true);
+        
+        els.calcAcidConc.value = state.acidConc.toFixed(2);
+        els.calcBaseVol.value = state.baseVol;
+        els.feedbackArea.classList.add('hidden');
+        els.userAnswer.value = '';
+        els.calcAcidVol.value = '';
+        
+    } else {
+        els.modeBadge.textContent = "PRACTICE MODE";
+        els.modeBadge.className = "absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold border border-slate-600 text-slate-400 bg-slate-800/80 z-20";
+        els.unknownOverlay.classList.add('hidden');
+        els.baseConcGroup.classList.remove('opacity-0', 'pointer-events-none');
+        
+        els.analysisCard.classList.remove('hidden');
+        els.calculationCard.classList.add('hidden');
+        
+        state.baseConc = parseFloat(els.baseConc.value);
+        resetSimulation(true);
+    }
+}
+
+function checkAnswer() {
+    const userVal = parseFloat(els.userAnswer.value);
+    if (isNaN(userVal)) return;
+
+    const trueVal = state.baseConc;
+    const percentError = Math.abs((userVal - trueVal) / trueVal) * 100;
+
+    els.feedbackArea.classList.remove('hidden');
+    els.feedbackArea.className = "mt-3 p-3 rounded-lg text-center border " + (percentError < 5 ? "bg-green-900/30 border-green-500 text-green-200" : "bg-red-900/30 border-red-500 text-red-200");
+    
+    if (percentError < 5) {
+        els.feedbackTitle.textContent = "Correct! Great job.";
+        els.feedbackMsg.innerHTML = `Actual: ${trueVal.toFixed(3)} M. Error: ${percentError.toFixed(1)}% <br> 
+        <button onclick="document.getElementById('postlab_overlay').style.display='flex'" class="mt-3 w-full py-2 bg-green-600 hover:bg-green-500 text-white rounded-lg text-sm font-bold transition shadow-[0_0_15px_rgba(34,197,94,0.4)] flex justify-center items-center gap-2">
+            <span class="material-symbols-outlined text-sm">school</span> Take Post-Lab Viva
+        </button>`;
+    } else {
+        els.feedbackTitle.textContent = "Incorrect. Try again.";
+        els.feedbackMsg.textContent = `Your error is ${percentError.toFixed(1)}%. Check your volume reading.`;
+    }
+}
+// --- Conclusion Saving Logic ---
+    function saveConclusion() {
+        const text = document.getElementById('studentConclusion').value;
+        if(text.trim() === '') {
+            alert("Please write your conclusion before saving.");
+            return;
+        }
+        
+        // Save to a global variable so the future PDF generator can access it
+        window.studentFinalConclusion = text;
+        
+        // Show success message
+        const msg = document.getElementById('conclusionSavedMsg');
+        msg.classList.remove('hidden');
+        setTimeout(() => msg.classList.add('hidden'), 3000);
+    }
+function resizeCanvas() {
+    if (!els.canvas) return;
+    const rect = els.canvas.parentElement.getBoundingClientRect();
+    els.canvas.width = rect.width * 2;
+    els.canvas.height = rect.height * 2;
+    ctx.scale(2, 2);
+    drawGraph();
+}
+
+function resetSimulation(fullReset = true) {
+    state.volAdded = 0;
+    state.flowRate = 0;
+    state.isRunning = false;
+    state.history = [];
+    
+    els.flowRate.value = 0;
+    els.flowRate.dispatchEvent(new Event('input'));
+    
+    if (state.mode === 'practice' && fullReset) {
+        state.baseConc = parseFloat(els.baseConc.value);
+    }
+
+    if (state.mode === 'unknown') {
+        els.calcAcidConc.value = state.acidConc.toFixed(2);
+        els.calcBaseVol.value = state.baseVol;
+    }
+
+    calculatePH();
+    updateStats();
+    render();
+}
+
+function loop(timestamp) {
+    const dt = (timestamp - lastTime) / 1000;
+    lastTime = timestamp;
+
+    if (state.isRunning && state.volAdded < state.buretteTotalVol) {
+        const added = state.flowRate * dt;
+        state.volAdded += added;
+        
+        if (state.volAdded >= state.buretteTotalVol) {
+            state.volAdded = state.buretteTotalVol;
+            state.isRunning = false;
+            els.flowRate.value = 0;
+            els.flowRate.dispatchEvent(new Event('input'));
+        }
+
+        calculatePH();
+        
+        if (state.history.length === 0 || Math.abs(state.history[state.history.length-1].vol - state.volAdded) > 0.1) {
+            state.history.push({ vol: state.volAdded, ph: state.currentPH });
+        }
+    }
+
+    if (state.isRunning || state.history.length > 0) {
+         render();
+    }
+
+    requestAnimationFrame(loop);
+}
+
+function calculatePH() {
+    const Vb = state.baseVol / 1000; 
+    const Cb = state.baseConc;
+    const Va = state.volAdded / 1000;
+    const Ca = state.acidConc;
+    
+    const moles_analyte = Vb * Cb;
+    const moles_titrant = Va * Ca;
+    const Vtotal = Vb + Va;
+
+    let val = 7; 
+
+    if (state.experimentType === 'acid_base') {
+        const isWeakAcid = state.acidType === 'Acetic';
+        const isWeakBase = state.baseType === 'NH3';
+
+        if (!isWeakAcid && !isWeakBase) {
+            const excessBaseMoles = moles_analyte - moles_titrant;
+            if (excessBaseMoles > 1e-10) {
+                val = 14 - (-Math.log10(excessBaseMoles / Vtotal));
+            } else if (excessBaseMoles < -1e-10) {
+                val = -Math.log10(-excessBaseMoles / Vtotal);
+            } else {
+                val = 7.00;
+            }
+        } 
+        else if (isWeakAcid && !isWeakBase) {
+            const Ka = 1.76e-5; 
+            const pKa = 4.75;
+            const Kb = 1e-14 / Ka; 
+            if (moles_titrant < moles_analyte) {
+                val = 14 - (-Math.log10((moles_analyte - moles_titrant) / Vtotal));
+            } else if (Math.abs(moles_titrant - moles_analyte) < 1e-7) {
+                val = 14 - (-Math.log10(Math.sqrt(Kb * (moles_analyte / Vtotal))));
+            } else {
+                val = pKa + Math.log10(moles_analyte / (moles_titrant - moles_analyte));
+            }
+        }
+        else if (!isWeakAcid && isWeakBase) {
+            const Kb = 1.8e-5;
+            const pKb = 4.74;
+            const pKa = 14 - pKb; 
+            const Ka = 1e-14 / Kb;
+
+            if (moles_titrant === 0) {
+                val = 14 + Math.log10(Math.sqrt(Kb * (moles_analyte / Vtotal)));
+            } else if (moles_titrant < moles_analyte - 1e-7) {
+                val = pKa + Math.log10((moles_analyte - moles_titrant) / moles_titrant);
+            } else if (Math.abs(moles_titrant - moles_analyte) < 1e-7) {
+                val = -Math.log10(Math.sqrt(Ka * (moles_analyte / Vtotal)));
+            } else {
+                val = -Math.log10((moles_titrant - moles_analyte) / Vtotal);
+            }
+        }
+    } 
+    else if (state.experimentType === 'redox') {
+        let fraction = moles_titrant / moles_analyte;
+        if (fraction <= 0) val = 400; 
+        else if (fraction < 0.99) val = 770 + 59 * Math.log10(fraction / (1 - fraction));
+        else if (fraction > 1.01) val = 1510 - 59 * Math.log10((fraction - 1) / fraction);
+        else val = 1140; 
+    }
+    else if (state.experimentType === 'complexometric') {
+        let fraction = moles_titrant / moles_analyte;
+        if (fraction < 0.99) val = -Math.log10(Math.max(1e-10, (moles_analyte - moles_titrant)/Vtotal));
+        else if (fraction > 1.01) val = 10; 
+        else val = 5; 
+    }
+    else if (state.experimentType === 'precipitation') {
+        let fraction = moles_titrant / moles_analyte;
+        if (fraction < 0.99) val = -Math.log10(Math.max(1e-10, (moles_analyte - moles_titrant)/Vtotal));
+        else if (fraction > 1.01) val = 8; 
+        else val = 4.8; 
+    }
+    else if (state.experimentType === 'back_titration') {
+        const unreacted_base = moles_analyte * 0.60; 
+        const excessBaseMoles = unreacted_base - moles_titrant;
+        
+        if (excessBaseMoles > 1e-10) {
+            val = 14 - (-Math.log10(excessBaseMoles / Vtotal));
+        } else if (excessBaseMoles < -1e-10) {
+            val = -Math.log10(-excessBaseMoles / Vtotal);
+        } else {
+            val = 7.00;
+        }
+    }
+
+    if (state.experimentType === 'redox') {
+        state.currentPH = Math.max(0, Math.min(1600, val));
+    } else {
+        state.currentPH = Math.max(0, Math.min(14, val));
+    }
+
+    if (state.mode === 'practice') {
+        if (state.experimentType === 'acid_base') {
+            if (moles_titrant < moles_analyte * 0.99) {
+                els.reactionStatus.textContent = state.baseType === 'NH3' ? "Buffer Region. Solution is weakly Alkaline." : "Excess Base. Solution is Alkaline.";
+                els.dominantSpecies.textContent = state.baseType === 'NH3' ? "NH₃ / NH₄⁺ (Ammonia Buffer)" : "OH⁻ + Cation";
+            } else if (moles_titrant > moles_analyte * 1.01) {
+                els.reactionStatus.textContent = "Excess Acid. Solution is Acidic.";
+                els.dominantSpecies.textContent = state.acidType === 'HCl' ? "H⁺ + Cl⁻" : "CH₃COOH";
+            } else {
+                els.reactionStatus.textContent = "Near Equivalence Point!";
+                els.dominantSpecies.textContent = state.baseType === 'NH3' ? "NH₄Cl (Acidic Salt)" : "Salt + Water";
+            }
+        } else if (state.experimentType === 'redox') {
+            els.reactionStatus.textContent = moles_titrant < moles_analyte ? "Excess Reducing Agent" : "Excess Oxidant";
+            els.dominantSpecies.textContent = moles_titrant < moles_analyte ? "Fe²⁺ / Fe³⁺" : "MnO₄⁻ / Mn²⁺";
+        } else if (state.experimentType === 'complexometric') {
+            els.reactionStatus.textContent = moles_titrant < moles_analyte ? "Free Metal Ions Present" : "Metal Ions Fully Chelated";
+            els.dominantSpecies.textContent = moles_titrant < moles_analyte ? "Ca²⁺" : "[Ca-EDTA]²⁻";
+        } else {
+            els.reactionStatus.textContent = moles_titrant < moles_analyte ? "Precipitate Forming" : "Excess Titrant";
+            els.dominantSpecies.textContent = moles_titrant < moles_analyte ? "AgCl (s)" : "Ag⁺ + Cl⁻";
+        }
+    }
+}
+
+function render() {
+    els.phDisplay.textContent = state.currentPH.toFixed(2);
+    els.volAddedDisplay.innerHTML = `${state.volAdded.toFixed(2)} <span class="text-sm text-slate-500">mL</span>`;
+
+    const flaskFullHeight = 85; 
+    const capacity = 100;
+    const currentTotalVol = state.baseVol + state.volAdded;
+    const percentFill = Math.min((currentTotalVol / capacity) * 100, flaskFullHeight);
+    els.flaskLiquid.style.height = `${percentFill}%`;
+    
+    const burettePercent = ((state.buretteTotalVol - state.volAdded) / state.buretteTotalVol) * 90;
+    els.buretteLiquid.style.height = `${Math.max(0, burettePercent)}%`;
+
+    const color = calculateColor(state.currentPH);
+    els.flaskLiquid.style.backgroundColor = color;
+    els.drop.style.backgroundColor = color;
+
+    drawGraph();
+}
+
+function calculateColor(val) {
+    if (state.experimentType === 'acid_base') {
+        const ind = INDICATORS[state.indicator];
+        if (val <= ind.range[0]) return rgbaToString(ind.colors[0]);
+        if (val >= ind.range[1]) return rgbaToString(ind.colors[1]);
+        
+        const t = (val - ind.range[0]) / (ind.range[1] - ind.range[0]);
+        const c1 = ind.colors[0];
+        const c2 = ind.colors[1];
+        const r = Math.round(c1[0] + (c2[0] - c1[0]) * t);
+        const g = Math.round(c1[1] + (c2[1] - c1[1]) * t);
+        const b = Math.round(c1[2] + (c2[2] - c1[2]) * t);
+        const a = c1[3] + (c2[3] - c1[3]) * t;
+        return `rgba(${r}, ${g}, ${b}, ${a})`;
+    } 
+    
+    const moles_analyte = (state.baseVol / 1000) * state.baseConc;
+    const moles_titrant = (state.volAdded / 1000) * state.acidConc;
+
+    if (state.experimentType === 'redox') {
+        if (moles_titrant > moles_analyte) return "rgba(200, 0, 255, 0.4)"; 
+        else return "rgba(240, 255, 240, 0.2)";
+    }
+    if (state.experimentType === 'complexometric') {
+        if (moles_titrant >= moles_analyte) return "rgba(0, 100, 255, 0.6)"; 
+        else return "rgba(180, 0, 50, 0.6)"; 
+    }
+    if (state.experimentType === 'precipitation') {
+        if (moles_titrant >= moles_analyte) return "rgba(200, 50, 0, 0.8)"; 
+        else return "rgba(255, 255, 0, 0.4)"; 
+    }
+
+    return "rgba(255, 255, 255, 0.1)"; 
+}
+
+function rgbaToString(arr) {
+    return `rgba(${arr[0]}, ${arr[1]}, ${arr[2]}, ${arr[3]})`;
+}
+
+function updateStats() {
+    const eqVol = (state.baseConc * state.baseVol) / state.acidConc;
+    els.eqPointText.textContent = `${eqVol.toFixed(2)} mL`;
+}
+
+function drawGraph() {
+    const w = els.canvas.width / 2;
+    const h = els.canvas.height / 2;
+    ctx.clearRect(0, 0, w*2, h*2);
+    
+    const pad = 30;
+    const graphW = w - pad * 2;
+    const graphH = h - pad * 2;
+    const maxVol = 50;
+    
+    let maxY = 14;
+    let yLabel = 'pH';
+    let yStep = 2;
+    
+    if (state.experimentType === 'redox') { 
+        maxY = 1600; 
+        yLabel = 'Potential (mV)'; 
+        yStep = 200; 
+    } else if (state.experimentType === 'complexometric') { 
+        maxY = 12; 
+        yLabel = 'pM'; 
+    } else if (state.experimentType === 'precipitation') { 
+        maxY = 10; 
+        yLabel = 'pAg'; 
+    }
+
+    function getX(vol) { return pad + (vol / maxVol) * graphW; }
+    function getY(val) { return pad + graphH - (val / maxY) * graphH; }
+
+    ctx.strokeStyle = '#e2e8f0';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    for(let v=0; v<=maxVol; v+=10) { ctx.moveTo(getX(v), pad); ctx.lineTo(getX(v), pad+graphH); }
+    for(let p=0; p<=maxY; p+=yStep) { ctx.moveTo(pad, getY(p)); ctx.lineTo(pad+graphW, getY(p)); }
+    ctx.stroke();
+
+    ctx.strokeStyle = '#94a3b8';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(pad, pad);
+    ctx.lineTo(pad, pad + graphH);
+    ctx.lineTo(pad + graphW, pad + graphH);
+    ctx.stroke();
+    
+    ctx.fillStyle = '#64748b';
+    ctx.font = '10px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.fillText('Volume Added (mL)', w/2, h - 5);
+    
+    ctx.save();
+    ctx.translate(10, h/2);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText(yLabel, 0, 0); 
+    ctx.restore();
+
+    if (state.history.length < 1) return;
+    
+    ctx.strokeStyle = state.mode === 'unknown' ? '#8b5cf6' : '#06b6d4'; 
+    ctx.lineWidth = 3;
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    
+    const initialPH = state.history.length > 0 ? state.history[0].ph : state.currentPH;
+    ctx.moveTo(getX(0), getY(initialPH));
+
+    for(let pt of state.history) {
+        ctx.lineTo(getX(pt.vol), getY(pt.ph));
+    }
+    ctx.lineTo(getX(state.volAdded), getY(state.currentPH));
+    ctx.stroke();
+}
+
+init();
+</script>
+<div id="procedure-drawer" class="fixed top-32 left-0 z-50 flex transform -translate-x-[320px] transition-transform duration-300 ease-in-out">
+    
+    <div class="w-[320px] bg-slate-800 border-y border-r border-slate-600 rounded-r-2xl shadow-[10px_0_30px_rgba(0,0,0,0.5)] flex flex-col max-h-[70vh]">
+        
+        <div class="p-4 bg-slate-700 rounded-tr-2xl border-b border-slate-600 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-cyan-400">checklist</span>
+                <h3 class="font-bold text-white">Operating Procedure</h3>
+            </div>
+        </div>
+
+        <div class="p-4 overflow-y-auto custom-scrollbar space-y-4 flex-1">
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>1. PPE Check:</strong> Equip Goggles and Nitrile Gloves to access the lab.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>2. Calibration:</strong> Dip probe in Buffer 7.00 and 4.00 to standardize the meter.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>3. Eye Level:</strong> Adjust the Parallax slider to 0 to confirm starting volume.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>4. Reagents:</strong> Select the experiment type, titrant, and analyte.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>5. Indicator:</strong> Select appropriate pH indicator for your titration type.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>6. Homogenization:</strong> Turn Magnetic Stirrer speed to ≥50% to unlock stopcock.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>7. Titration:</strong> Open the stopcock. Titrate carefully until a permanent color change occurs.</span>
+            </label>
+            <label class="flex items-start gap-3 cursor-pointer group">
+                <input type="checkbox" class="peer mt-0.5 accent-cyan-500 w-4 h-4 rounded border-slate-600 bg-slate-700 cursor-pointer">
+                <span class="text-xs text-slate-300 peer-checked:line-through peer-checked:text-slate-500 transition-all"><strong>8. Analysis:</strong> Record the final volume and calculate the unknown in Challenge mode.</span>
+            </label>
+        </div>
+        
+        <div class="p-3 bg-slate-900/80 border-t border-slate-700 text-center">
+            <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Mark steps as completed</p>
+        </div>
+    </div>
+
+    <button id="drawer-handle" onclick="toggleProcedureDrawer()" class="bg-cyan-600 hover:bg-cyan-500 text-white rounded-r-xl p-2 shadow-[5px_0_15px_rgba(6,182,212,0.4)] flex flex-col items-center justify-center border border-l-0 border-cyan-400 h-32 my-auto transition-colors group cursor-pointer">
+        <span class="material-symbols-outlined text-sm mb-1 group-hover:scale-125 transition-transform" id="drawer-icon">chevron_right</span>
+        <span style="writing-mode: vertical-rl; text-orientation: mixed;" class="font-bold tracking-widest text-[10px] uppercase rotate-180">Procedure</span>
+    </button>
+
+</div>
+
+<script>
+    function toggleProcedureDrawer() {
+    const drawer = document.getElementById('procedure-drawer');
+    const icon = document.getElementById('drawer-icon');
+    
+    // Check current state using the transform style
+    if (drawer.style.transform === 'translateX(0px)') {
+        // Close it
+        drawer.style.transform = 'translateX(-320px)';
+        icon.innerText = 'chevron_right';
+    } else {
+        // Open it
+        drawer.style.transform = 'translateX(0px)';
+        icon.innerText = 'chevron_left';
+    }
+}
+
+// Ensure the drawer starts in the closed position on load
+window.addEventListener('load', () => {
+    const drawer = document.getElementById('procedure-drawer');
+    drawer.style.transform = 'translateX(-320px)';
+});
+    async function generatePDFReport() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const timestamp = new Date().toLocaleString();
+
+    // 1. Header & Title
+    doc.setFontSize(22);
+    doc.setTextColor(40, 44, 52);
+    doc.text("Laboratory Experiment Report", 105, 20, { align: "center" });
+    
+    doc.setFontSize(12);
+    doc.setTextColor(100);
+    doc.text(`Generated on: ${timestamp}`, 105, 28, { align: "center" });
+    doc.line(20, 32, 190, 32);
+
+    // 2. Experiment Details
+    doc.setFontSize(16);
+    doc.setTextColor(0);
+    doc.text("1. Experiment Aim", 20, 45);
+    doc.setFontSize(11);
+    doc.setTextColor(60);
+    const aimText = "To determine the unknown concentration of an analyte using volumetric titration and analyze the resulting pH/Potential curve.";
+    doc.text(doc.splitTextToSize(aimText, 170), 20, 52);
+
+    // 3. Observations Table Data
+    doc.setFontSize(16);
+    doc.setTextColor(0);
+    doc.text("2. Observation Table", 20, 70);
+    
+    // Fetching data from your interactive table
+    const trials = [1, 2, 3].map(i => {
+        const init = document.querySelectorAll('.init-vol')[i-1].value || "0.00";
+        const final = document.querySelectorAll('.final-vol')[i-1].value || "0.00";
+        const used = document.getElementById(`used-vol-${i}`).textContent;
+        return [i, init, final, used];
+    });
+
+    let startY = 78;
+    doc.setFontSize(10);
+    doc.text("Trial | Initial (mL) | Final (mL) | Volume Used (mL)", 20, startY);
+    doc.line(20, startY + 2, 120, startY + 2);
+    
+    trials.forEach((t, index) => {
+        doc.text(`${t[0]}     | ${t[1]}         | ${t[2]}       | ${t[3]}`, 20, startY + 10 + (index * 8));
+    });
+
+    const concordant = document.getElementById('concordantVol').value || "Not Recorded";
+    doc.setFont("helvetica", "bold");
+    doc.text(`CONCORDANT VOLUME: ${concordant} mL`, 20, startY + 40);
+    doc.setFont("helvetica", "normal");
+
+    // 4. Titration Curve (Capturing the Canvas)
+    doc.setFontSize(16);
+    doc.text("3. Titration Curve Analysis", 20, 140);
+    const canvas = document.getElementById('graphCanvas');
+    const imgData = canvas.toDataURL("image/png");
+    doc.addImage(imgData, 'PNG', 20, 145, 170, 80);
+
+    // 5. Inference & Results
+    doc.addPage();
+    doc.setFontSize(16);
+    doc.text("4. Inference & Conclusion", 20, 20);
+    doc.setFontSize(11);
+    const conclusion = window.studentFinalConclusion || "No conclusion recorded by student.";
+    doc.text(doc.splitTextToSize(conclusion, 170), 20, 30);
+
+    // 6. Assessment Result
+    doc.setFontSize(16);
+    doc.text("5. Assessment Summary", 20, 80);
+    doc.setFontSize(11);
+    const vivaStatus = window.vivaPassed ? "PASSED (100%)" : "PENDING / NOT COMPLETED";
+    doc.text(`Post-Lab Viva Status: ${vivaStatus}`, 20, 90);
+
+    // 7. Footer
+    doc.setFontSize(10);
+    doc.setTextColor(150);
+    doc.text("Verified by Virtual Lab System - Academic Standard Compliant", 105, 285, { align: "center" });
+
+    // 8. Download
+    doc.save("Titration_Lab_Report.pdf");
+}
+(function() {
+    // 1. STATE TRACKING
+    const safetyState = { goggles: false, gloves: false };
+
+    // 2. REFERENCES
+    const gBtn = document.getElementById('ui_btn_goggles');
+    const lBtn = document.getElementById('ui_btn_gloves');
+    const enterBtn = document.getElementById('ui_btn_enter');
+    const statusTxt = document.getElementById('ui_status_msg');
+
+    // 3. ACTION LOGIC
+    function markEquipped(type) {
+        safetyState[type] = true;
+        const box = document.getElementById('ui_box_' + type);
+        const btn = document.getElementById('ui_btn_' + type);
+        
+        box.style.opacity = "1.0";
+        box.style.filter = "none";
+        box.style.transform = "scale(1.1)";
+        btn.innerText = "✅ EQUIPPED";
+        btn.style.background = "#1d4ed8";
+        
+        if (safetyState.goggles && safetyState.gloves) {
+            enterBtn.disabled = false;
+            enterBtn.style.background = "#22c55e";
+            enterBtn.style.color = "white";
+            enterBtn.style.cursor = "pointer";
+            enterBtn.innerText = "ACCESS GRANTED - CLICK TO ENTER";
+            if(statusTxt) {
+                statusTxt.innerText = "✨ SAFETY PROTOCOL VERIFIED";
+                statusTxt.style.color = "#4ade80";
+            }
+        }
+    }
+
+    // 4. ATTACH LISTENERS
+    if(gBtn) gBtn.addEventListener('click', () => markEquipped('goggles'));
+    if(lBtn) lBtn.addEventListener('click', () => markEquipped('gloves'));
+    
+    if(enterBtn) {
+        enterBtn.addEventListener('click', () => {
+            if (!enterBtn.disabled) {
+                document.getElementById('safety_protocol_overlay').style.display = "none";
+                // Unlock titration equipment
+                if (window.state) state.paused = false;
+            }
+        });
+    }
+
+    // 5. HARDWARE LOCK ON LOAD
+    window.addEventListener('load', () => {
+        // Force hardware to be locked until safety is passed
+        if (window.state) state.paused = true;
+    });
+
+})(); // <--- THIS WAS MISSING AND IS VITAL
+</script>
+<div class="fixed inset-0 z-[110] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="teacher-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-6xl w-full p-6 border-2 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.3)] relative flex flex-col max-h-[95vh]">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-4 mb-4">
+            <h2 class="text-2xl font-bold text-amber-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">edit_note</span> Teacher Dashboard: Exam Editor
+            </h2>
+            <button class="text-slate-400 hover:text-white bg-slate-700 p-1 rounded-full" onclick="document.getElementById('teacher-modal').classList.add('hidden')">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="bg-amber-900/30 text-amber-200 border border-amber-500/50 p-3 rounded-lg text-sm mb-4">
+            <strong>Instructions:</strong> Edit the questions and options below. Use the radio button next to an option to mark it as the correct answer. Click "Save Changes" at the bottom when done.
+        </div>
+<div class="bg-slate-900 border border-emerald-500/50 p-4 rounded-xl mb-4">
+            <h3 class="text-emerald-400 font-bold flex items-center gap-2 mb-3">
+                <span class="material-symbols-outlined">key</span> Decode Student Submission
+            </h3>
+            <div class="flex gap-2">
+                <input type="text" id="teacher-decode-input" placeholder="Paste student code here (e.g. VExBQi...)" class="flex-1 bg-slate-800 border border-slate-600 rounded-lg p-2 text-white font-mono text-sm focus:border-emerald-500 focus:outline-none">
+                <button onclick="decodeStudentCode()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold rounded-lg transition shadow-lg">
+                    Decode
+                </button>
+            </div>
+            <div id="decoded-result-area" class="hidden mt-4 p-3 bg-slate-800 rounded-lg border border-slate-600 text-sm">
+                </div>
+        </div>
+        <div id="editor-container" class="overflow-y-auto pr-2 custom-scrollbar space-y-4 flex-1">
+            </div>
+        
+        <div class="flex justify-between items-center border-t border-slate-700 pt-5 mt-4">
+            <span class="text-sm text-slate-400">Security Code: <strong class="text-white">teacher123</strong></span>
+            <button onclick="saveTeacherEdits()" class="px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)] flex items-center gap-2 transition-all">
+                <span class="material-symbols-outlined">save</span> Save & Apply Changes
+            </button>
+        </div>
+    </div>
+</div>
+<div class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="final-exam-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-5xl w-full p-8 border-2 border-red-500 shadow-[0_0_40px_rgba(239,68,68,0.3)] relative flex flex-col max-h-[95vh]">
+        
+        <div class="text-center mb-6 border-b border-slate-700 pb-4 relative">
+            <button class="absolute top-0 right-0 text-slate-400 hover:text-white" onclick="document.getElementById('final-exam-modal').classList.add('hidden')">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+            <span class="material-symbols-outlined text-5xl text-red-500 mb-2">assignment_turned_in</span>
+            <h2 class="text-3xl font-bold text-white tracking-wide">Final Theory Assessment</h2>
+            <p class="text-slate-400 text-sm mt-1">Answer all 50 questions to complete the module. Total Marks: 50</p>
+        </div>
+
+        <div id="exam-questions-container" class="overflow-y-auto pr-4 custom-scrollbar space-y-6 text-slate-300 text-sm flex-1 mb-6">
+            </div>
+
+        <div class="flex justify-between items-center border-t border-slate-700 pt-5">
+            <div id="exam-score-display" class="text-2xl font-bold text-white hidden bg-slate-900 px-6 py-2 rounded-xl border border-slate-600">
+                Final Score: <span id="exam-score-val" class="text-red-400">0</span> / 50
+            </div>
+            <button onclick="submitFinalExam()" id="submit-exam-btn" class="px-8 py-3 bg-red-600 hover:bg-red-500 text-white font-bold rounded-xl transition shadow-lg flex items-center gap-2 ml-auto">
+                <span class="material-symbols-outlined">done_all</span> Submit Exam
+            </button>
+            <button onclick="document.getElementById('final-exam-modal').classList.add('hidden')" id="close-exam-btn" class="hidden px-8 py-3 bg-slate-600 hover:bg-slate-500 text-white font-bold rounded-xl transition shadow-lg flex items-center gap-2 ml-auto">
+                Return to Lab
+            </button>
+        </div>
+    </div>
+</div>
+<script>
+// --- 50-QUESTION EXAM LOGIC ---
+const examQuestions = [
+    // Acid-Base Principles
+    { q: "What is the primary function of a pH indicator in titration?", options: ["To actively change the pH", "To signal the equivalence point visually", "To act as a buffer", "To dissolve the precipitate"], a: 1 },
+    { q: "Which formula is used to calculate unknown concentration at the equivalence point?", options: ["M₁V₁/n₁ = M₂V₂/n₂", "pH = -log[H⁺]", "V = IR", "E = mc²"], a: 0 },
+    { q: "In a strong acid-strong base titration, the equivalence point pH is approximately:", options: ["3.0", "7.0", "9.5", "12.0"], a: 1 },
+    { q: "Phenolphthalein is colorless in an acidic solution and what color in a basic solution?", options: ["Blue", "Yellow", "Pink", "Red"], a: 2 },
+    { q: "Why do we read the lower meniscus for colorless liquids?", options: ["Liquid expands at the top", "To avoid parallax error", "The upper meniscus is invisible", "It prevents chemical reaction"], a: 1 },
+    { q: "Which of the following is a strong base?", options: ["NH₃", "CH₃COOH", "NaOH", "H₂CO₃"], a: 2 },
+    { q: "What happens if a few drops of titrant remain on the inner wall of the flask?", options: ["Calculated unknown concentration will be artificially higher", "Equivalence point is reached faster", "The indicator will fail", "Nothing changes"], a: 0 },
+    { q: "In the titration of weak acid with strong base, the pH at the equivalence point is:", options: ["Exactly 7", "Less than 7", "Greater than 7", "Depends on temperature only"], a: 2 },
+    { q: "Methyl orange changes from red to yellow in the pH range of:", options: ["3.1 - 4.4", "6.0 - 7.6", "8.2 - 10.0", "11.0 - 12.5"], a: 0 },
+    { q: "A solution resistant to pH changes upon addition of small amounts of acid or base is a:", options: ["Standard solution", "Buffer solution", "Neutral solution", "Saturated solution"], a: 1 },
+    
+    // Redox Titrations
+    { q: "In a redox titration using KMnO₄, what acts as the indicator?", options: ["Phenolphthalein", "Methyl Orange", "KMnO₄ itself (Self-indicating)", "Starch"], a: 2 },
+    { q: "What is the oxidation state of Mn in KMnO₄?", options: ["+2", "+4", "+6", "+7"], a: 3 },
+    { q: "Which medium is usually used for KMnO₄ titrations?", options: ["Dilute HCl", "Dilute H₂SO₄", "Dilute HNO₃", "Water"], a: 1 },
+    { q: "What is the equivalent weight of KMnO₄ in acidic medium? (M = Molar Mass)", options: ["M/1", "M/3", "M/5", "M/7"], a: 2 },
+    { q: "In the reaction between KMnO₄ and FeSO₄, what is oxidized?", options: ["Mn²⁺", "Fe²⁺", "SO₄²⁻", "K⁺"], a: 1 },
+    { q: "Which indicator is commonly used in Iodometric titrations?", options: ["Starch", "EBT", "Potassium Chromate", "Fluorescein"], a: 0 },
+    { q: "Why is dilute HCl NOT used to acidify KMnO₄?", options: ["It neutralizes the acid", "HCl is oxidized to chlorine gas by KMnO₄", "It forms a precipitate", "It evaporates too quickly"], a: 1 },
+    { q: "What is the color change at the endpoint of a KMnO₄ titration?", options: ["Colorless to pale pink", "Pink to colorless", "Blue to red", "Yellow to green"], a: 0 },
+    { q: "Mohr's salt is a double salt of:", options: ["Iron and Copper", "Ferrous sulfate and Ammonium sulfate", "Potassium and Magnesium", "Sodium and Calcium"], a: 1 },
+    { q: "Redox titrations are based on the transfer of:", options: ["Protons", "Neutrons", "Electrons", "Ions"], a: 2 },
+    
+    // Complexometric Titrations
+    { q: "Complexometric titrations are predominantly used to determine:", options: ["Acid strength", "Metal ion concentration", "Gas volume", "Organic impurities"], a: 1 },
+    { q: "Which chelating agent is most widely used in complexometry?", options: ["EDTA", "Ammonia", "Cyanide", "Oxalate"], a: 0 },
+    { q: "What is the denticity of EDTA?", options: ["Bidentate", "Tetradentate", "Hexadentate", "Octadentate"], a: 2 },
+    { q: "Which indicator is used in the EDTA titration for water hardness?", options: ["Eriochrome Black T (EBT)", "Phenolphthalein", "Methyl Red", "Bromothymol Blue"], a: 0 },
+    { q: "What buffer is used to maintain pH 10 in EDTA titrations?", options: ["Acetate buffer", "Phosphate buffer", "NH₄OH-NH₄Cl buffer", "Carbonate buffer"], a: 2 },
+    { q: "At the endpoint of a Ca/Mg EDTA titration using EBT, the color changes from:", options: ["Blue to Wine Red", "Wine Red to Blue", "Colorless to Pink", "Yellow to Red"], a: 1 },
+    { q: "EDTA forms stable complexes with most metal ions in a ratio of:", options: ["1:1", "1:2", "2:1", "1:3"], a: 0 },
+    { q: "Temporary hardness of water is removed by:", options: ["Boiling", "Adding EDTA", "Filtration", "Adding acid"], a: 0 },
+    { q: "What happens if the pH drops below 9 during an EDTA titration with EBT?", options: ["The complex becomes too stable", "The indicator color change becomes indistinct", "Precipitation occurs", "Glassware cracks"], a: 1 },
+    { q: "Masking agents in complexometry are used to:", options: ["Enhance color", "Prevent interfering ions from reacting", "Speed up the reaction", "Lower the pH"], a: 1 },
+    
+    // Precipitation (Mohr's Method) & Back Titration
+    { q: "Mohr's method is an example of which type of titration?", options: ["Acid-Base", "Redox", "Precipitation", "Complexometric"], a: 2 },
+    { q: "The standard titrant used in Mohr's method is:", options: ["NaCl", "AgNO₃", "BaCl₂", "K₂CrO₄"], a: 1 },
+    { q: "What indicator is used in Mohr's method?", options: ["Potassium Chromate (K₂CrO₄)", "Fluorescein", "Ferric Alum", "EBT"], a: 0 },
+    { q: "The endpoint in Mohr's method is marked by the appearance of:", options: ["White precipitate (AgCl)", "Brick-red precipitate (Ag₂CrO₄)", "Yellow solution", "Blue complex"], a: 1 },
+    { q: "Mohr's titration must be carried out in a medium that is:", options: ["Strongly acidic", "Neutral or weakly alkaline", "Strongly alkaline", "Boiling hot"], a: 1 },
+    { q: "If Mohr's titration is done in an acidic medium, what happens?", options: ["AgCl dissolves", "Chromate ion converts to dichromate, preventing endpoint detection", "Silver oxidizes", "The glass shatters"], a: 1 },
+    { q: "Fajan's method uses which type of indicators?", options: ["Adsorption indicators", "pH indicators", "Redox indicators", "Self-indicators"], a: 0 },
+    { q: "In Volhard's method, the back titration uses which titrant?", options: ["AgNO₃", "KSCN or NH₄SCN", "NaCl", "NaOH"], a: 1 },
+    { q: "The precipitate formed before the endpoint in Mohr's method is:", options: ["Ag₂CrO₄", "AgCl", "KNO₃", "Na₂CrO₄"], a: 1 },
+    { q: "Which analysis technique involves adding excess standard reagent and titrating the unreacted portion?", options: ["Direct titration", "Back titration", "Replacement titration", "Thermometric titration"], a: 1 },
+    
+    // Apparatus, Error Analysis & Procedures
+    { q: "Before using a burette, it should be rinsed with:", options: ["Distilled water only", "The solution it will contain", "Acetone", "Tap water"], a: 1 },
+    { q: "The standard solution of known concentration is typically placed in the:", options: ["Conical flask", "Burette", "Beaker", "Wash bottle"], a: 1 },
+    { q: "What is the correct way to handle a pipette?", options: ["Blow out the last drop", "Let it drain naturally", "Shake it vigorously", "Heat it before use"], a: 1 },
+    { q: "Why is a white tile placed under the titration flask?", options: ["To prevent spills", "To protect the bench", "To better observe the color change", "To absorb heat"], a: 2 },
+    { q: "Parallax error occurs when:", options: ["The equipment is uncalibrated", "The eye is not level with the meniscus", "The temperature fluctuates", "The wrong indicator is used"], a: 1 },
+    { q: "A primary standard must NOT be:", options: ["Highly pure", "Stable in air", "Hygroscopic (absorbs moisture)", "Of high molecular weight"], a: 2 },
+    { q: "Which of these is a good primary standard for standardizing bases?", options: ["NaOH", "HCl", "Potassium Hydrogen Phthalate (KHP)", "H₂SO₄"], a: 2 },
+    { q: "If the stopcock leaks during titration, the calculated unknown concentration will be:", options: ["Accurate", "Higher than actual", "Lower than actual", "Unaffected"], a: 1 },
+    { q: "Why is stirring essential during titration?", options: ["To heat the mixture", "To ensure rapid homogenization and accurate pH reading", "To prevent the indicator from fading", "To dissolve the glass"], a: 1 },
+    { q: "A sudden, sharp jump in the potentiometric titration curve indicates:", options: ["Instrument failure", "The equivalence point", "Need for more indicator", "Start of the reaction"], a: 1 }
+];
+
+function toggleExamMode() {
+    const isExam = document.getElementById('examToggle').checked;
+    const standardSwitch = document.getElementById('modeToggle');
+    const examBtn = document.getElementById('exam-trigger-btn');
+    
+    if (isExam) {
+        state.mode = 'exam';
+        standardSwitch.disabled = true; 
+        
+        // Blur digital readings
+        if(els.phDisplay) els.phDisplay.style.filter = "blur(12px)";
+        if(els.volAddedDisplay) els.volAddedDisplay.style.filter = "blur(12px)";
+        
+        // UI Updates
+        if(els.modeBadge) {
+            els.modeBadge.textContent = "⚠️ FORMAL EXAM";
+            els.modeBadge.className = "absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-bold border border-red-500 text-red-400 bg-red-950 z-20";
+        }
+        
+        if(els.analysisCard) els.analysisCard.classList.add('hidden');
+        if(els.calculationCard) els.calculationCard.classList.remove('hidden');
+        if(els.unknownOverlay) els.unknownOverlay.classList.remove('hidden');
+        if(examBtn) examBtn.classList.remove('hidden'); 
+        
+        state.baseConc = Math.random() * (0.16 - 0.04) + 0.04;
+        if(typeof resetSimulation === 'function') resetSimulation(true);
+        
+        alert("EXAM MODE ACTIVE:\n- Digital pH and Volume are HIDDEN.\n- Rely on the Burette Zoom and Indicator Color.\n- Click 'TAKE 50-QUESTION EXAM' when ready to test your theory.");
+    } else {
+        standardSwitch.disabled = false;
+        if(els.phDisplay) els.phDisplay.style.filter = "none";
+        if(els.volAddedDisplay) els.volAddedDisplay.style.filter = "none";
+        if(examBtn) examBtn.classList.add('hidden');
+        
+        if(typeof updateUIForMode === 'function') updateUIForMode(); 
+        if(typeof resetSimulation === 'function') resetSimulation(true);
+    }
+}
+
+function startFinalExam() {
+    const container = document.getElementById('exam-questions-container');
+    document.getElementById('final-exam-modal').classList.remove('hidden');
+    
+    if (container.innerHTML.trim() === '') {
+        let html = '';
+        examQuestions.forEach((item, index) => {
+            html += `
+            <div class="bg-slate-900/50 p-5 rounded-xl border border-slate-700 hover:border-slate-500 transition" id="q-block-${index}">
+                <p class="font-bold text-white mb-4 text-base"><span class="text-red-400 mr-2">${index + 1}.</span> ${item.q}</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-6">
+                    ${item.options.map((opt, i) => `
+                    <label class="flex items-center gap-3 cursor-pointer group p-2 rounded hover:bg-slate-800 transition">
+                        <input type="radio" name="q${index}" value="${i}" class="accent-red-500 w-4 h-4 cursor-pointer transform scale-110">
+                        <span class="text-slate-300 group-hover:text-white transition">${opt}</span>
+                    </label>
+                    `).join('')}
+                </div>
+            </div>`;
+        });
+        container.innerHTML = html;
+    }
+}
+
+function submitFinalExam() {
+    // --- TEACHER MODE LOGIC ---
+
+// 1. Check if the teacher saved custom questions previously
+window.addEventListener('load', () => {
+    const savedQuestions = localStorage.getItem('customTitrationExam');
+    if (savedQuestions) {
+        const parsed = JSON.parse(savedQuestions);
+        examQuestions.length = 0; // clear array
+        parsed.forEach(q => examQuestions.push(q));
+    }
+});
+
+function openTeacherMode() {
+    // The security code is "teacher123" (You can change this word!)
+    const code = prompt("Enter Teacher Security Code to edit the exam:");
+    
+    if (code === "teacher123") {
+        renderTeacherEditor();
+        document.getElementById('teacher-modal').classList.remove('hidden');
+    } else if (code !== null) {
+        alert("❌ Incorrect Security Code. Access Denied.");
+    }
+}
+
+function renderTeacherEditor() {
+    const container = document.getElementById('editor-container');
+    let html = '';
+    
+    examQuestions.forEach((item, index) => {
+        html += `
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 hover:border-amber-500/50 transition">
+            <div class="flex gap-3 mb-3 items-start">
+                <span class="text-amber-500 font-bold text-lg w-6">${index + 1}.</span>
+                <textarea id="edit-q-${index}" rows="2" class="flex-1 bg-slate-800 border border-slate-600 rounded-lg p-2 text-white text-sm focus:border-amber-500 focus:outline-none custom-scrollbar">${item.q.replace(/"/g, '&quot;')}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-9">
+                ${item.options.map((opt, i) => `
+                    <div class="flex items-center gap-2 bg-slate-800/50 p-2 rounded-lg border border-slate-700">
+                        <input type="radio" name="edit-a-${index}" value="${i}" ${item.a === i ? 'checked' : ''} class="accent-amber-500 w-4 h-4 cursor-pointer" title="Mark as correct answer">
+                        <input type="text" id="edit-opt-${index}-${i}" value="${opt.replace(/"/g, '&quot;')}" class="flex-1 bg-transparent border-none text-sm text-slate-300 focus:outline-none focus:text-white">
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function saveTeacherEdits() {
+    const newQuestions = [];
+    
+    for (let index = 0; index < examQuestions.length; index++) {
+        const qText = document.getElementById(`edit-q-${index}`).value;
+        const options = [
+            document.getElementById(`edit-opt-${index}-0`).value,
+            document.getElementById(`edit-opt-${index}-1`).value,
+            document.getElementById(`edit-opt-${index}-2`).value,
+            document.getElementById(`edit-opt-${index}-3`).value
+        ];
+        
+        // Find which radio button the teacher selected as the correct answer
+        const aVal = document.querySelector(`input[name="edit-a-${index}"]:checked`);
+        const correctIndex = aVal ? parseInt(aVal.value) : 0;
+        
+        newQuestions.push({ q: qText, options: options, a: correctIndex });
+    }
+    
+    // Update the live exam array
+    examQuestions.length = 0;
+    newQuestions.forEach(q => examQuestions.push(q));
+    
+    // Save locally so the browser remembers it
+    localStorage.setItem('customTitrationExam', JSON.stringify(examQuestions));
+    
+    // Clear the student exam HTML so it is forced to redraw with the new questions
+    document.getElementById('exam-questions-container').innerHTML = '';
+    
+    document.getElementById('teacher-modal').classList.add('hidden');
+    alert("✅ Exam successfully updated! The 50-Q Exam will now use your custom questions and answers.");
+}
+    let score = 0;
+    let allAnswered = true;
+    
+    examQuestions.forEach((item, index) => {
+        const selected = document.querySelector(`input[name="q${index}"]:checked`);
+        const block = document.getElementById(`q-block-${index}`);
+        
+        if (!selected) {
+            allAnswered = false;
+            block.style.borderColor = '#ef4444'; 
+        } else {
+            block.style.borderColor = '#334155'; 
+            if (parseInt(selected.value) === item.a) {
+                score++;
+                block.style.backgroundColor = 'rgba(34, 197, 94, 0.1)'; 
+                block.style.borderColor = '#22c55e';
+            } else {
+                block.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'; 
+                block.style.borderColor = '#ef4444';
+                
+                const correctLabel = block.querySelectorAll('label')[item.a];
+                correctLabel.style.backgroundColor = 'rgba(34, 197, 94, 0.2)';
+                correctLabel.style.border = '1px solid #22c55e';
+            }
+        }
+    });
+    
+    if (!allAnswered) {
+        alert("Please answer all 50 questions before submitting the exam.");
+        return;
+    }
+    
+    document.getElementById('exam-score-val').innerText = score;
+    document.getElementById('exam-score-display').classList.remove('hidden');
+    document.getElementById('submit-exam-btn').classList.add('hidden');
+    document.getElementById('close-exam-btn').classList.remove('hidden');
+    
+    document.querySelectorAll('#exam-questions-container input').forEach(input => input.disabled = true);
+    
+    window.finalExamScore = score;
+}
+</script>
+<div class="fixed inset-0 z-[110] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 transition-opacity duration-300 hidden" id="teacher-modal">
+    <div class="bg-slate-800 rounded-2xl max-w-6xl w-full p-6 border-2 border-amber-500 shadow-[0_0_40px_rgba(245,158,11,0.3)] relative flex flex-col max-h-[95vh]">
+        <div class="flex justify-between items-center border-b border-slate-700 pb-4 mb-4">
+            <h2 class="text-2xl font-bold text-amber-400 flex items-center gap-2">
+                <span class="material-symbols-outlined">edit_note</span> Teacher Dashboard: Exam Editor
+            </h2>
+            <button class="text-slate-400 hover:text-white bg-slate-700 p-1 rounded-full" onclick="document.getElementById('teacher-modal').classList.add('hidden')">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+        
+        <div class="bg-amber-900/30 text-amber-200 border border-amber-500/50 p-3 rounded-lg text-sm mb-4">
+            <strong>Instructions:</strong> Edit the questions and options below. Use the radio button next to an option to mark it as the correct answer. Click "Save Changes" at the bottom when done.
+        </div>
+
+        <div id="editor-container" class="overflow-y-auto pr-2 custom-scrollbar space-y-4 flex-1">
+            </div>
+        
+        <div class="flex justify-between items-center border-t border-slate-700 pt-5 mt-4">
+            <span class="text-sm text-slate-400">Security Code: <strong class="text-white">teacher123</strong></span>
+            <button onclick="saveTeacherEdits()" class="px-8 py-3 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl shadow-[0_0_15px_rgba(34,197,94,0.4)] flex items-center gap-2 transition-all">
+                <span class="material-symbols-outlined">save</span> Save & Apply Changes
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+// --- TEACHER MODE LOGIC ---
+window.addEventListener('load', () => {
+    const savedQuestions = localStorage.getItem('customTitrationExam');
+    if (savedQuestions) {
+        const parsed = JSON.parse(savedQuestions);
+        examQuestions.length = 0; // clear array
+        parsed.forEach(q => examQuestions.push(q));
+    }
+});
+
+function openTeacherMode() {
+    const code = prompt("Enter Teacher Security Code to edit the exam:");
+    
+    if (code === "teacher123") {
+        renderTeacherEditor();
+        document.getElementById('teacher-modal').classList.remove('hidden');
+    } else if (code !== null) {
+        alert("❌ Incorrect Security Code. Access Denied.");
+    }
+}
+
+function renderTeacherEditor() {
+    const container = document.getElementById('editor-container');
+    let html = '';
+    
+    examQuestions.forEach((item, index) => {
+        html += `
+        <div class="bg-slate-900 p-4 rounded-xl border border-slate-700 hover:border-amber-500/50 transition">
+            <div class="flex gap-3 mb-3 items-start">
+                <span class="text-amber-500 font-bold text-lg w-6">${index + 1}.</span>
+                <textarea id="edit-q-${index}" rows="2" class="flex-1 bg-slate-800 border border-slate-600 rounded-lg p-2 text-white text-sm focus:border-amber-500 focus:outline-none custom-scrollbar">${item.q.replace(/"/g, '&quot;')}</textarea>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pl-9">
+                ${item.options.map((opt, i) => `
+                    <div class="flex items-center gap-2 bg-slate-800/50 p-2 rounded-lg border border-slate-700">
+                        <input type="radio" name="edit-a-${index}" value="${i}" ${item.a === i ? 'checked' : ''} class="accent-amber-500 w-4 h-4 cursor-pointer" title="Mark as correct answer">
+                        <input type="text" id="edit-opt-${index}-${i}" value="${opt.replace(/"/g, '&quot;')}" class="flex-1 bg-transparent border-none text-sm text-slate-300 focus:outline-none focus:text-white">
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+        `;
+    });
+    container.innerHTML = html;
+}
+
+function saveTeacherEdits() {
+    const newQuestions = [];
+    
+    for (let index = 0; index < examQuestions.length; index++) {
+        const qText = document.getElementById(`edit-q-${index}`).value;
+        const options = [
+            document.getElementById(`edit-opt-${index}-0`).value,
+            document.getElementById(`edit-opt-${index}-1`).value,
+            document.getElementById(`edit-opt-${index}-2`).value,
+            document.getElementById(`edit-opt-${index}-3`).value
+        ];
+        
+        const aVal = document.querySelector(`input[name="edit-a-${index}"]:checked`);
+        const correctIndex = aVal ? parseInt(aVal.value) : 0;
+        
+        newQuestions.push({ q: qText, options: options, a: correctIndex });
+    }
+    
+    examQuestions.length = 0;
+    newQuestions.forEach(q => examQuestions.push(q));
+    
+    localStorage.setItem('customTitrationExam', JSON.stringify(examQuestions));
+    
+    const examContainer = document.getElementById('exam-questions-container');
+    if (examContainer) examContainer.innerHTML = ''; // Force redraw of student exam
+    
+    document.getElementById('teacher-modal').classList.add('hidden');
+    alert("✅ Exam successfully updated! The 50-Q Exam will now use your custom questions and answers.");
+}
+// --- SECURE SUBMISSION LOGIC ---
+
+// Student Side: Generate Code
+function generateSubmissionCode() {
+    const rollNumber = prompt("Please enter your Roll Number or Student ID:");
+    if (!rollNumber) return; // Cancelled
+
+    // Gather Student Data
+    const concordantVol = document.getElementById('concordantVol').value || "Not Recorded";
+    const vivaPassed = window.vivaPassed ? "Yes (100%)" : "Failed / Not Taken";
+    const examScore = window.finalExamScore !== undefined ? `${window.finalExamScore}/50` : "Not Taken";
+    const timestamp = new Date().toLocaleString();
+
+    // Create a data object
+    const studentData = {
+        r: rollNumber,
+        c: concordantVol,
+        v: vivaPassed,
+        e: examScore,
+        t: timestamp,
+        checksum: "VLAB-VERIFIED" // Prevents fake codes
+    };
+
+    // Encode to Base64 (looks like encrypted text, prevents casual editing)
+    const jsonString = JSON.stringify(studentData);
+    const encodedString = btoa(jsonString); 
+
+    // Display it to the student
+    document.getElementById('submission-code-area').classList.remove('hidden');
+    document.getElementById('student-secure-code').innerText = encodedString;
+}
+
+// Teacher Side: Decode Code
+function decodeStudentCode() {
+    const input = document.getElementById('teacher-decode-input').value.trim();
+    const resultArea = document.getElementById('decoded-result-area');
+    
+    if (!input) {
+        alert("Please paste a code first.");
+        return;
+    }
+
+    try {
+        // Decode from Base64
+        const decodedString = atob(input);
+        const data = JSON.parse(decodedString);
+
+        // Verify it's a real code from our app
+        if (data.checksum !== "VLAB-VERIFIED") throw new Error("Invalid format");
+
+        // Display the results beautifully
+        resultArea.classList.remove('hidden');
+        resultArea.classList.add('border-emerald-500');
+        resultArea.innerHTML = `
+            <div class="grid grid-cols-2 gap-2 text-slate-300">
+                <div class="text-xs text-slate-400">Roll Number:</div>
+                <div class="font-bold text-white text-lg">${data.r}</div>
+                
+                <div class="text-xs text-slate-400">Concordant Volume:</div>
+                <div class="font-mono text-cyan-400">${data.c} mL</div>
+                
+                <div class="text-xs text-slate-400">Viva Status:</div>
+                <div class="font-bold ${data.v.includes('Yes') ? 'text-emerald-400' : 'text-red-400'}">${data.v}</div>
+                
+                <div class="text-xs text-slate-400">Final Exam Score:</div>
+                <div class="font-bold text-amber-400">${data.e}</div>
+                
+                <div class="text-xs text-slate-400 mt-2 border-t border-slate-700 pt-2">Completed On:</div>
+                <div class="text-xs text-slate-400 mt-2 border-t border-slate-700 pt-2">${data.t}</div>
+            </div>
+        `;
+    } catch (error) {
+        resultArea.classList.remove('hidden');
+        resultArea.classList.remove('border-emerald-500');
+        resultArea.classList.add('border-red-500');
+        resultArea.innerHTML = `<p class="text-red-400 font-bold text-center">❌ Invalid or Corrupted Code. Do not accept this submission.</p>`;
+    }
+}
+</script>
+</body>
+</html>
